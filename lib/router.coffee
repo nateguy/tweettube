@@ -1,5 +1,5 @@
-# Router.map ->
-#   @route 'login', {path: '/'}
-#   @route 'registration'
+Router.map ->
+  @route 'login', {path: '/'}
+  @route 'schedule'
 #   @route 'blab',
     # waitOn: -> Meteor.subscribe "messages"
