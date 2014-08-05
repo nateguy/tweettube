@@ -1,121 +1,397 @@
 <template name="schedule">
-  <div class="grid">
-      <div class="frame">
-         <div class="bit-5 a1">
-              <!-- <img src="http://placekitten.com/800/400" /> -->
+<h1 class ="mainTitle">TV Schedule</h1>
+<div class="grid">
+  <div class = "channel">
+  <div class="row">
+         <div class="col-md-4">
               <h2>Channel list A</h2>
-         </div>
-         <div class="bit-5 a2">
-              <h3>10h00-10h30</h3>
-              <a>Friends</a>
-         </div>
-         <div class="bit-5 a3">
-              <h3>10h30-11h00</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 a4">
-              <h3>11h00-11h30</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 a5">
-              <h3>11h30-12h00</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 b1">
+          </div>
+          <div class="col-md-2" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class ="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">10h00-10h30
+                </a>
+                </h2>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                </div>
+              </div>
+            </div>
+          </div>
+         <div class="col-md-2" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">10h30-11h00
+              </a>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="col-md-2" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">11h00-11h30
+              </a>
+              </h2>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="col-md-2" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">11h30-12h00
+              </a>
+              </h2>
+            </div>
+        </div>
+            <div id="collapseFour" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      <div class="row">
+         <div class="col-md-4">
               <h2>Channel list B</h2>
          </div>
-         <div class="bit-5 b2">
-              <h3>10h00-10h30</h3>
-              <a>Friends</a>
-         </div>
-         <div class="bit-5 b3">
-              <h3>10h30-11h00</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 b4">
-               <h3>11h00-11h30</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 b5">
-              <h3>11h30-12h00</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 c1">
+          <div class="col-md-2" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">10h00-10h30
+              </a>
+              </h2>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">10h30-11h00
+              </a>
+              </h2>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="col-md-2" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">11h00-11h30
+              </a>
+              </h2>
+            </div>
+            <div id="collapseSeven" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="col-md-2" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight">11h30-12h00
+              </a>
+              </h2>
+            </div>
+            <div id="collapseEight" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+         <div class="col-md-4">
               <h2>Channel list C</h2>
          </div>
-         <div class="bit-5 c2">
-              <h3>10h00-10h30</h3>
-              <a>Friends</a>
-         </div>
-         <div class="bit-5 c3">
-              <h3>10h30-11h00</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 c4">
-              <h3>11h00-11h30</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 c5">
-              <h3>11h30-12h00</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 d1">
+          <div class="col-md-2" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseNine">10h00-10h30
+              </a>
+              </h2>
+            </div>
+            <div id="collapseNine" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+            <div class="col-md-2" id="accordion">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h2 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTen">10h30-11h00
+                  </a>
+                  </h2>
+                </div>
+              <div id="collapseTen" class="panel-collapse collapse in">
+                <div class="panel-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+           <div class="col-md-2" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">11h00-11h30
+                </a>
+                </h2>
+              </div>
+            <div id="collapseEleven" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve">11h30-12h00
+                </a>
+                </h2>
+              </div>
+            <div id="collapseTwelve" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      <div class="row">
+         <div class="col-md-4">
               <h2>Channel list D</h2>
          </div>
-         <div class="bit-5 d2">
-              <h3>10h00-10h30</h3>
-              <a>Friends</a>
-         </div>
-         <div class="bit-5 d3">
-              <h3>10h30-11h00</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 d4">
-              <h3>11h00-11h30</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 d5">
-              <h3>11h30-12h00</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 e1">
+          <div class="col-md-2" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen">10h00-10h30
+                </a>
+                </h2>
+              </div>
+            <div id="collapseThirteen" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="col-md-2" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen">10h30-11h00
+                </a>
+                </h2>
+              </div>
+            <div id="collapseFourteen" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+            <div class="col-md-2" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen">11h00-11h30
+                </a>
+                </h2>
+              </div>
+            <div id="collapseFifteen" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="col-md-2" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseSixteen">11h30-12h00
+                </a>
+                </h2>
+              </div>
+            <div id="collapseSixteen" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="row">
+         <div class="col-md-4">
               <h2>Channel list E</h2>
          </div>
-         <div class="bit-5 e2">
-              <h3>10h00-10h30</h3>
-              <a>Friends</a>
-         </div>
-         <div class="bit-5 e3">
-              <h3>10h30-11h00</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 e4">
-              <h3>11h00-11h30</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 e5">
-              <h3>11h30-12h00</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 f1">
+           <div class="col-md-2" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeventeen">10h00-10h30
+                </a>
+                </h2>
+              </div>
+            <div id="collapseSeventeen" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="col-md-2" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseEighteen">10h30-11h00
+                </a>
+                </h2>
+              </div>
+            <div id="collapseEighteen" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="col-md-2" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseNineteen">11h00-11h30
+                </a>
+                </h2>
+              </div>
+            <div id="collapseNineteen" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="col-md-2" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwenty">11h30-12h00
+                </a>
+                </h2>
+              </div>
+            <div id="collapseTwenty" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+         <div class="row">
+          <div class="col-md-4">
               <h2>Channel list F</h2>
          </div>
-         <div class="bit-5 f2">
-              <h3>10h00-10h30</h3>
-              <a>Friends</a>
-         </div>
-         <div class="bit-5 f3">
-              <h3>10h30-11h00</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 f4">
-              <h3>11h00-11h30</h3>
-              <a>Blah blah</a>
-         </div>
-         <div class="bit-5 f5">
-              <h3>11h30-12h00</h3>
-              <a>Blah blah</a>
-         </div>
+          <div class="col-md-2" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwentyone">10h00-10h30
+                </a>
+                </h2>
+              </div>
+            <div id="collapseTwentyone" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="col-md-2" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwentytwo">10h30-11h00
+                </a>
+                </h2>
+              </div>
+            <div id="collapseTwentytwo" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="col-md-2" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwentythree">11h00-11h30
+                </a>
+                </h2>
+              </div>
+            <div id="collapseTwentythree" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="col-md-2" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwentyfour">11h30-12h00
+                </a>
+                </h2>
+              </div>
+            <div id="collapseTwentyfour" class="panel-collapse collapse in">
+              <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-  </div>
+    </div>
 </template>
