@@ -24,6 +24,7 @@ a{
   background-color: #757575;
   width: 100%;
   height: 100px;
+  margin-bottom: 100px;
 }
 
 .navbar .nav{
@@ -38,116 +39,86 @@ a{
 
 
 
-/*  SECTIONS  ============================================================================= */
+/* grid */
+.grid{
+  margin-top: 150px;
+  background-color: #f9bdbb;
+  webkit-border-radius: 27px;
+  moz-border-radius: 27px;
+  border-radius: 27px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
 
-.section {
+.bit-5{
+  :hover{
+    background-color: #f36c60;
+  }
+}
+
+
+
+.frame {
+width:90%;
+margin:0 auto;
+margin-top: 20px;
+}
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  /* Removes padding behaviour on widths */
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Attribute selector */
+[class*='bit-'] {
+  float: left;
+  padding: 10px;
+}
+
+/* Floats last ".bit-" to the right */
+[class*='bit-']:last-of-type {
+  padding-right: 10px;
+  float: right;
+}
+
+/* Clearfix */
+.frame:after {
+  content: "";
+  display: table;
   clear: both;
-  padding: 0px;
-  margin: 40px;
 }
 
-/*  GROUPING  ============================================================================= */
+/* Main Widths */
+.bit-1  {width: 100%;}
+.bit-2  {width: 50%;}
+.bit-3  {width: 33.33%;}
+.bit-4  {width: 25%;}
+.bit-5  {width: 20%;}
+.bit-6  {width: 16.6666666667%;}
+.bit-7  {width: 14.2857142857%;}
+.bit-8  {width: 12.5%;}
+.bit-9  {width: 11.1111111111%;}
+.bit-10 {width: 10%;}
+.bit-11 {width: 9.09090909091%;}
+.bit-12 {width: 8.33%;}
 
-
-.group:before,
-.group:after {
-    content:"";
-    display:table;
-}
-.group:after {
-    clear:both;
-}
-.group {
-    zoom:1; /* For IE 6/7 (trigger hasLayout) */
-}
-
-/*  GRID COLUMN SETUP   ==================================================================== */
-
-.col {
-  display: block;
-  float:left;
-  margin: 1% 0 1% 1.6%;
-}
-
-.col:first-child { margin-left: 0; } /* all browsers except IE6 and lower */
-
-
-/*  REMOVE MARGINS AS ALL GO FULL WIDTH AT 480 PIXELS */
-
-@media only screen and (max-width: 480px) {
-  .col {
-    margin: 1% 0 1% 0%;
-  }
-}
-
-/*  GRID OF NINE   ============================================================================= */
-
-
-.span_9_of_9 {
-  width: 100%;
-}
-
-.span_8_of_9 {
-  width: 88.71%;
-}
-
-.span_7_of_9 {
-  width: 77.42%;
-}
-
-.span_6_of_9 {
-  width: 66.13%;
-}
-
-.span_5_of_9 {
-  width: 54.84%;
-}
-
-.span_4_of_9 {
-  width: 43.55%;
-}
-
-.span_3_of_9 {
-  width: 32.26%;
-}
-
-.span_2_of_9 {
-  width: 20.97%;
-}
-
-.span_1_of_9 {
-  width: 9.68%;
-}
-
-
-/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
-
-@media only screen and (max-width: 480px) {
-  .span_9_of_9 {
+/*base tablet to small desktop styles*/
+@media (min-width: 800px) and (max-width: 1100px) {
+  .bit-2,
+  .bit-7 {
     width: 100%;
   }
-  .span_8_of_9 {
-    width: 100%;
-  }
-  .span_7_of_9 {
-    width: 100%;
-  }
-  .span_6_of_9 {
-    width: 100%;
-  }
-  .span_5_of_9 {
-    width: 100%;
-  }
-  .span_4_of_9 {
-    width: 100%;
-  }
-  .span_3_of_9 {
-    width: 100%;
-  }
-  .span_2_of_9 {
-    width: 100%;
-  }
-  .span_1_of_9 {
-    width: 100%;
+
+  .bit-4,
+  .bit-8,
+  .bit-10,
+  .bit-12 {
+    width: 50%;
   }
 }
