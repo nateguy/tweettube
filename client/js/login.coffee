@@ -1,6 +1,3 @@
-getEmail = ->
-	Meteor.user().emails[0].address
-
 Template.loginForm.events
 
 	'submit #login-form': (e, t) ->

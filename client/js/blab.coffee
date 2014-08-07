@@ -28,9 +28,12 @@ Template.onlineuser.helpers
 Template.message.helpers
 	belongstoUser: ->
 		return (this.email == getEmail())
+	replies: ->
+		if this.responses
+			return this.responses.length
+		else
+			return 0
 
-Template.blab.rendered = ->
-	
 
 Template.message.rendered = ->
 	#j = new Deps.Dependancy
