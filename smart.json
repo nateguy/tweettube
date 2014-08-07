@@ -2,6 +2,12 @@
   "packages": {
     "iron-router": {},
     "foundation": {},
+<<<<<<< HEAD
     "handlebar-helpers": {}
+=======
+    "Dropzonejs": {},
+    "collectionFS": {},
+    "ui-dropped-event": {}
+>>>>>>> 9c7d0938cb86b420d899ebd2d14f14ac9f6b20d8
   }
 }

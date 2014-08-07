@@ -4,4 +4,34 @@
 /iron-core
 /iron-dynamic-template
 /foundation
+<<<<<<< HEAD
 /handlebar-helpers
+=======
+/Dropzonejs
+/collectionFS
+/cfs-base-package
+/cfs-file
+/cfs-collection
+/cfs-collection-filters
+/cfs-access-point
+/cfs-worker
+/cfs-upload-http
+/cfs-filesaver
+/cfs-storage-adapter
+/http-methods
+/numeral
+/data-man
+/emitter
+/cfs-upload-ddp
+/cfs-tempstore
+/http-publish
+/cfs-gridfs
+/power-queue
+/reactive-list
+/cfs-graphicsmagick
+/cfs-ejson-file
+/cfs-filesystem
+/reactive-property
+/micro-queue
+/ui-dropped-event
+>>>>>>> 9c7d0938cb86b420d899ebd2d14f14ac9f6b20d8
