@@ -1,0 +1,276 @@
+
+@import url('fonts.import.less');
+@import url('colors.import.less');
+
+body {
+  font-family: "Lato", "Helvetica Neue", Arial;
+  background-color: #ffffcc;
+  text-align: center;
+}
+
+.online_user_field {
+	margin-top: 5px;
+
+	.online {
+		background-color: green;
+		width: 20px;
+		height: 20px;
+		padding: 2px 0 0 20px;
+		margin-right: 22px;
+		display: table-cell;
+
+	}
+
+	.offline {
+		background-color: #aaaaaa;
+		width: 20px;
+		height: 20px;
+		padding: 2px 0 0 20px;
+		display: table-cell;
+
+	}
+
+	.email {
+		padding-left: 5px;
+		width: 50px;
+		text-align: left;
+		font-size: 9pt;
+		display: table-cell;
+
+	}
+}
+
+h1 {
+	color: #ffffff;
+}
+
+nav {
+	text-align: center;
+	background-color: #001100;
+	height: 45px;
+	color: #ffffff;
+	z-index: 10;
+	width: 100%;
+	position: fixed;
+
+	.columns:first-of-type {
+		text-align: left;
+		padding-top: 12px;
+	}
+
+	.columns:last-of-type {
+		text-align: right;
+		padding-top: 12px;
+
+	}
+
+	h1 {
+
+		font-size: 2em;
+		margin-top: -2px;
+	}
+}
+#messages {
+	width: 100%;
+	display: table-cell;
+	padding: 50px 20px 0px 20px;
+
+
+}
+
+#onlinelist {
+	display: table-cell;
+	vertical-align: top;
+	width: 300px;
+	padding: 50px 20px 0px 20px;
+
+
+
+}
+
+
+.message {
+	width: 100%;
+	opacity: 1;
+	padding: 2px;
+	margin: 3px 0;
+	position: relative;
+	border-radius: 10px;
+  	box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.4);
+
+	
+	&:last-of-type {
+		margin-bottom: 100px;
+	}
+
+	.user {
+		float: left;
+		font-size: 10pt;
+		font-weight: bold;
+		border-bottom: 1px solid #009999;
+		text-align: left;
+	}
+
+	.content {
+		font-size: 12pt;
+		line-height: 1.4em;
+		text-align: left;
+	}
+
+	.replies {
+		display: none;
+		text-align: left;
+	}
+
+	.reply_link {
+		text-align: left;
+		a {
+			color: #ffffff;
+			font-size: 10pt;
+		}
+
+		.counter_reply {
+			width: 100px;
+		}
+	}
+
+	.reply {
+		text-align: left;
+		border-radius: 5px;
+		width: 90%;
+		margin: 2px 0 2px 15px;
+		padding: 5px 5px 5px 5px;
+		background-color: #00ffff;
+	}
+
+	.replybox {
+		text-align: left;
+		margin-top: 20px;
+
+
+		#reply_span {
+			float: left;
+		}
+		input {
+			width: 90%;
+			display: inline;
+			height: 25px;
+			border: 0;
+			padding: 0 0 0 0;
+			margin: 0 0 0 20px;
+
+		}
+
+	}
+
+
+		float: right;
+		background-color: #00cc55;
+
+		&:after {
+			content: "";
+			position: absolute;
+		}
+
+
+
+}
+
+#message_box {
+	bottom: 0;
+	position: fixed;
+	width: 100%;
+	background-color: #002222;
+	padding: 10px;
+
+	form {
+		width: 84%;
+		float: left;
+		margin: 0;
+	}
+
+	input {
+		width: 70%;
+		display: inline;
+		height: 45px;
+		border: 0;
+		margin: 0;
+	}
+
+	input[type=submit], button {
+		width: 13%;
+		border: 0;
+		margin-left: 3px;
+	}
+
+}
+
+#reply_box {
+
+	background-color: #002222;
+	padding: 0px;
+
+	form {
+		width: 100%;
+		float: left;
+		margin: 0;
+		padding: 0;
+	}
+
+	input {
+		width: 70%;
+		display: inline;
+		height: 20px;
+		border: 0;
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+	}
+
+	input[type=submit] {
+		width: 13%;
+		border: 0;
+		margin-left: 3px;
+	}
+
+}
+
+
+.accounts-view {
+
+	width: 300px;
+	border-radius: 10px;
+	padding: 10px 10px 10px 10px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #aaaaaa;
+	margin-top: 10px;
+
+	#login-form {
+		width: 200px;
+		margin: 0 auto;
+	}
+
+	#registration-form {
+		width: 200px;
+		margin: 0 auto;
+	}
+
+	input {
+
+		height: 40px;
+		font-size: 16pt;
+		width: 200px;
+		}
+
+	input[type=submit] {
+		border: 0;
+		height: 35px;
+		background-color: @red;
+		color: #ffffff;
+	}
+
+
+	.otherlinks {
+		margin-top: 10px;
+	}
+}
