@@ -1,0 +1,36 @@
+<template name="registration">
+  <div id="registration-view">
+    <h1>Tweettube Sign-Up</h1>
+    <form action="#" id="registration-form">
+      <input type="email" id="accounts-email" placeholder="email" autofocus>
+      <input type="password" id="accounts-password" placeholder="password">
+      <input type="password" id="accounts-confirm" placeholder="confirm password">
+      <input type="nickname" id="accounts-nickname" placeholder="Nickname">
+      <input type="age" id="accounts-age" placeholder="Age">
+      <select class="dropbox" id="accounts-gender" name="gender">
+        <option value="" selected="selected">Gender</option>
+        <option value="1">Male</option>
+        <option value="2">Female</option>
+      </select>
+      <select class="dropbox" id="accounts-favorite" name="favorite">
+        <option value="" selected="selected">Favortite Genre</option>
+        <option value="1">Action</option>
+        <option value="2">Adventure</option>
+        <option value="3">Comedy</option>
+        <option value="4">Crime</option>
+        <option value="5">Drama</option>
+        <option value="6">Fantasy</option>
+        <option value="7">Horror</option>
+        <option value="8">Mystery</option>
+        <option value="9">Reality</option>
+        <option value="10">Romance</option>
+        <option value="11">Sci-Fi</option>
+        <option value="12">Triller</option>
+      </select>
+      <input type="submit" id="profile-done" value="done">
+    </form>
+      <div class="other-links">
+        <a href="{{ pathFor 'login' }}">Back</a>
+      </div>
+  </div>
+</template>

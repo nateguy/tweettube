@@ -1,3 +1,9 @@
 {
-  "packages": {}
+  "packages": {
+    "iron-router": {},
+    "foundation": {},
+    "Dropzonejs": {},
+    "collectionFS": {},
+    "ui-dropped-event": {}
+  }
 }
