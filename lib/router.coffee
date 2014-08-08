@@ -1,6 +1,6 @@
 Router.map ->
 
-  @route 'login', {path: '/'}
+  @route 'login', {path: '/tweet'}
   @route 'registration'
   @route 'tweet'
   @route 'edit'
