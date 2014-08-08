@@ -100,7 +100,7 @@ Template.blab.events
 		console.log "logged out"
 		console.log this._id
 		Meteor.logout()
-		Router.go('loginForm')
+		Router.go('login')
 		e.preventDefault()
 		false
 
