@@ -2,9 +2,10 @@ Router.map ->
 
   @route 'login', {path: '/'}
   @route 'registration'
-  @route 'tweet'
+  @route 'tweet',
+    waitOn: -> Meteor.subscribe "channels"
   @route 'edit'
-
+  @route 'addChannel'
   @route 'blab',
     path: 'blab',
     waitOn: -> [Meteor.subscribe "messages",

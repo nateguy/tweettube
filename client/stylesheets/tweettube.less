@@ -41,6 +41,8 @@ nav {
     margin-bottom: 20px;
   }
 
+  position: fixed;
+
   h2 {
     font-size: 2em;
 
@@ -51,7 +53,7 @@ nav {
   a {
     color: #ffffff;
   }
-  background-color: #009688;
+  background-color: #006655;
   height: 60px;
   color: #ffffff;
   z-index: 10;
@@ -90,19 +92,22 @@ display: block;
 }
 
 .container-fluid {
-padding-right: 15px;
-padding-left: 15px;
-margin-right: auto;
-margin-left: auto;
-}
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  }
+
 * {
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-}
-user agent stylesheetdiv {
-display: block;
-}
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  }
+  
+  user agent stylesheetdiv {
+    display: block;
+  }
 
 
 .container>.navbar-header, .container-fluid>.navbar-header, .container>.navbar-collapse, .container-fluid>.navbar-collapse {
@@ -178,11 +183,12 @@ display: block;
 //   color: red;
 // }
 
-// .mainTitle{
-//   margin-top: 130px;
-//   font-size: 4em;
-//   color: black;
-// }
+.mainTitle{
+  padding-top: 60px;
+  margin-top: 0px;
+
+  color: black;
+ }
 
 
 
@@ -203,7 +209,18 @@ display: block;
 .panel-body{
   background-color: #80cbc4;
   border-color: #e0e0e0;
-  border: solid;
+  border: 0; 
+}
+
+
+
+[class*='col-'] {
+  padding-right: 5px;
+  padding-left: 5px;
+  h2 {
+    margin-top: 0;
+    font-weight: bold;
+  }
 }
 
 .row{
@@ -214,7 +231,7 @@ display: block;
 }
 
 .panel-title{
-  font-size: 2em;
+  font-size: 1em;
 }
 
 .channela{

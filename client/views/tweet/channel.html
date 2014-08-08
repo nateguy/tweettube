@@ -1,0 +1,81 @@
+<template name="channel">
+    <div class="channela">
+    <div class="row">
+  <div class="col-md-2">
+    <h2>{{channel}}</h2>
+      </div>
+
+      <div class="col-md-10">
+        <div class="col-md-3" id="accordion">
+              <div class="panel panel-default">
+
+                  <h2 class ="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1{{_id}}">10h00-10h30
+                  </a>
+                  </h2>
+
+                <div id="collapse1{{_id}}" class="panel-collapse collapse">
+                  <div class="panel-body">
+                  {{program1}}
+                  </div>
+                </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-3" id="accordion">
+          <div class="panel panel-default">
+
+              <h2 class ="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2{{_id}}">10h00-10h30
+                </a>
+              </h2>
+
+              <div id="collapse2{{_id}}" class="panel-collapse collapse">
+                <div class="panel-body">
+                {{program2}}
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+
+          <div class="col-md-3" id="accordion">
+          <div class="panel panel-default">
+
+              <h2 class ="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3{{_id}}">10h00-10h30
+                </a>
+              </h2>
+
+              <div id="collapse3{{_id}}" class="panel-collapse collapse">
+                <div class="panel-body">
+                {{program3}}
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-3" id="accordion">
+          <div class="panel panel-default">
+
+              <h2 class ="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4{{_id}}">10h00-10h30
+                </a>
+              </h2>
+
+              <div id="collapse4{{_id}}" class="panel-collapse collapse">
+                <div class="panel-body">
+                {{program4}}
+                </div>
+              </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+</template>
