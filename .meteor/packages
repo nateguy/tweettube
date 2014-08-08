@@ -11,3 +11,12 @@ coffeescript
 bootstrap
 iron-router
 bootstrap-3
+Dropzonejs
+collectionFS
+cfs-filesystem
+ui-dropped-event
+accounts-base
+accounts-password
+foundation
+accounts-ui
+cfs-gridfs
