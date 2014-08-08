@@ -1,3 +1,4 @@
+
 # Template.upload.events
 #   "dropped #dropzone": (event, temp) ->
 #     console.log "files dropped"
@@ -29,8 +30,6 @@
 # Template.myForm.events "change .myFileInput": (event, template) ->
 #   FS.Utility.eachFile event, (file) ->
 #     Images.insert file, (err, fileObj) ->
-
-
 
 
 Template.edit.events
