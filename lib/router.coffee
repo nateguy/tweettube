@@ -19,12 +19,12 @@ Router.map ->
 autoLogin = (pause) ->
   Router.go 'tweet' if Meteor.userId()
 
-# requireLogin = (pause) ->
-#   unless Meteor.userId()
-#     Router.go 'login'
+requireLogin = (pause) ->
+   unless Meteor.userId()
+     Router.go 'login'
 
 Router.onBeforeAction autoLogin,
   only: ['login', 'registration']
 
-# Router.onBeforeAction requireLogin,
-#   only: 'tweet'
+Router.onBeforeAction requireLogin,
+   only: 'tweet'

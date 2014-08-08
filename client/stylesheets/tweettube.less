@@ -34,6 +34,12 @@ body {
 }
 
 
+.navbar .nav > li > a {
+    font-size: 2em;
+    color: #ffffff;
+    text-shadow: none;
+  }
+
 nav {
   .navbar {
 
@@ -41,20 +47,18 @@ nav {
     margin-bottom: 20px;
   }
 
+  .nav {
+    height: 40px;
+  }
+
   position: fixed;
 
-  h2 {
-    font-size: 2em;
-
-  }
+  
+  
 
 
-
-  a {
-    color: #ffffff;
-  }
   background-color: #006655;
-  height: 60px;
+  height: 40px;
   color: #ffffff;
   z-index: 10;
   width: 100%;
@@ -171,8 +175,13 @@ display: block;
 }
 
 .navbar-brand{
-  font-size: 2em;
+  height: 40px;
+  font-size: 1.5em;
   font-weight: bold;
+  line-height: 10px;
+  a {
+    color: #ffffff;
+  }
 }
 
 
@@ -197,19 +206,24 @@ display: block;
 .grid{
   // margin-top: 150px;
   background-color: #80cbc4;
-  webkit-border-radius: 27px;
-  moz-border-radius: 27px;
-  border-radius: 27px;
+  webkit-border-radius: 10px;
+  moz-border-radius: 10px;
+  border-radius: 10px;
   margin-left: 30px;
   margin-right: 30px;
   margin-top: 30px
 }
 
+.panel {
+  margin-bottom: 5px;
+  padding: 0rem;
+}
 
 .panel-body{
-  background-color: #80cbc4;
+  background-color: #e0e0e0;
   border-color: #e0e0e0;
   border: 0; 
+
 }
 
 
@@ -224,20 +238,28 @@ display: block;
 }
 
 .row{
-  padding-top: 20px;
+  padding-top: 5px;
   padding-left: 10px;
   padding-right: 10px;
   max-width: 100%;
 }
 
+.panel_channel {
+  background-color: #009688;
+  border-radius: 4px;
+  padding: 0.05rem;
+
+}
 .panel-title{
   font-size: 1em;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .channela{
-  margin-top: 10px;
-  background-color: #009688;
-  opacity: 70%
+  margin: 0 auto;
+  opacity: 70%;
+  width: 100%;
 }
 
 .channelc{
@@ -403,12 +425,29 @@ color: #333;
 background-color: #fff;
 }
 
+.inner-cover {
+  max-width: 400px;
+  height: 400px;
+  border-radius: 15px;
+  margin: 0 auto;
+  background-color: rgba(22,22,22,0.9);
+  vertical-align: middle;
+  
+  label {
+    font-size: 1.5rem;
+    color: #ffffff;
+    }
+
+  input {
+    margin-top: 10px;
+    }
+  }
 
 
 
 .form-signin {
 max-width: 330px;
-padding: 15px;
+padding: 5px;
 margin: 0 auto;
 }
 * {

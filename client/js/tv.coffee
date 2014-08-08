@@ -3,6 +3,6 @@ Template.tweet.helpers
 
 Template.tweet.events
 
-	'click #collapseOne': (e)->
+	'click .panel-body': (e)->
 		Router.go('blab')
 		false

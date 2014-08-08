@@ -1,16 +1,18 @@
 <template name="channel">
     <div class="channela">
     <div class="row">
-  <div class="col-md-2">
-    <h2>{{channel}}</h2>
+    <div class="col-md-2">
+      <div class="panel_channel">
+        <h2>{{channel}}</h2>
       </div>
+    </div>
 
       <div class="col-md-10">
         <div class="col-md-3" id="accordion">
               <div class="panel panel-default">
 
                   <h2 class ="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1{{_id}}">10h00-10h30
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1{{_id}}">{{program1}}
                   </a>
                   </h2>
 
@@ -27,7 +29,7 @@
           <div class="panel panel-default">
 
               <h2 class ="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2{{_id}}">10h00-10h30
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2{{_id}}">{{program2}}
                 </a>
               </h2>
 
@@ -45,7 +47,7 @@
           <div class="panel panel-default">
 
               <h2 class ="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3{{_id}}">10h00-10h30
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3{{_id}}">{{program3}}
                 </a>
               </h2>
 
@@ -62,7 +64,7 @@
           <div class="panel panel-default">
 
               <h2 class ="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4{{_id}}">10h00-10h30
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4{{_id}}">{{program4}}
                 </a>
               </h2>
 
