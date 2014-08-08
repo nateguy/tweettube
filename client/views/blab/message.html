@@ -1,0 +1,53 @@
+<template name="message">
+	<div class="message">
+		<div class="row">
+			<div class="small-12 columns user">
+				{{ email }}
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 columns content">
+				{{ content }}
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="small-12 columns reply_link">		
+				<a href="#" id="seereplies">{{replies}} replies</a>
+				- <a href="#" id="seereplies">Reply</a>
+
+
+				{{#if belongstoUser}}
+				- <a href="#" id="deletereply">Delete</a>
+				{{/if}}
+			</div>
+			
+			<div class="small-12 columns replies">
+				{{#each responses}}
+				
+
+				<div class="row">
+					<div class="small-12 columns reply">
+					{{ email}} | {{ content}}<br>
+					<a href="#" id="deletereply2">Delete</a>
+					</div>
+				</div>
+
+				{{/each}}
+				
+				
+				<div class="row">
+
+					<div class="small-12 columns replybox">
+					<span id="reply_span">Reply:</span> {{> reply_box }}
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+
+
+</template>

@@ -1,0 +1,14 @@
+<template name="onlineuser">
+
+	<div class="online_user_field">
+		{{#if isOnline}}
+		<div class="online"></div> 
+		{{else}}
+		<div class="offline"></div> 		
+		{{/if}}
+		<div class="email">
+		{{ email }}
+		</div>
+		
+	</div>
+</template>

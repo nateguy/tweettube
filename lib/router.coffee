@@ -4,6 +4,11 @@ Router.map ->
   @route 'registration'
   @route 'tweet'
   @route 'edit'
+  @route 'blab',
+    path: 'blab',
+    waitOn: -> [Meteor.subscribe "messages",
+    			Meteor.subscribe "onlineusers"]
+
 
 #   @route 'blab',
     # waitOn: -> Meteor.subscribe "messages"

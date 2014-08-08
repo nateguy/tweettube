@@ -1,0 +1,176 @@
+.online_user_field {
+	margin-top: 5px;
+
+	.online {
+		background-color: green;
+		width: 20px;
+		height: 20px;
+		padding: 2px 0 0 20px;
+		margin-right: 22px;
+		display: table-cell;
+
+	}
+
+	.offline {
+		background-color: #aaaaaa;
+		width: 20px;
+		height: 20px;
+		padding: 2px 0 0 20px;
+		display: table-cell;
+
+	}
+
+	.email {
+		padding-left: 5px;
+		width: 50px;
+		text-align: left;
+		font-size: 9pt;
+		display: table-cell;
+
+	}
+}
+
+#onlinelist {
+	display: table-cell;
+	vertical-align: top;
+	width: 300px;
+	padding: 50px 20px 0px 20px;
+
+	span {
+		font-weight: bold;
+	}
+}
+
+#messages {
+	width: 100%;
+	display: table-cell;
+	padding: 50px 20px 0px 20px;
+
+
+}
+
+
+.message {
+	width: 100%;
+	opacity: 1;
+	padding: 2px;
+	margin: 3px 0;
+	position: relative;
+	border-radius: 10px;
+  	box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.4);
+
+  	.row {
+  		margin-top: 0;
+  		padding-top: 0;
+  	}
+	
+	&:last-of-type {
+		margin-bottom: 100px;
+	}
+
+	.user {
+		float: left;
+		font-size: 10pt;
+		font-weight: bold;
+		border-bottom: 1px solid #009999;
+		text-align: left;
+	}
+
+	.content {
+		font-size: 12pt;
+		line-height: 1.4em;
+		text-align: left;
+	}
+
+	.replies {
+		display: none;
+		text-align: left;
+	}
+
+	.reply_link {
+		text-align: left;
+		a {
+			color: #ffffff;
+			font-size: 10pt;
+		}
+
+		.counter_reply {
+			width: 100px;
+		}
+	}
+
+	.reply {
+		text-align: left;
+		border-radius: 5px;
+		width: 100%;
+		font-size: 11pt;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding: 5px 5px 5px 15px;
+		background-color: #55ff55;
+	}
+
+	.replybox {
+		text-align: left;
+		margin-top: 5px;
+		margin-bottom: 5px;
+
+
+		#reply_span {
+			font-size: 11pt;
+			float: left;
+		}
+
+		form {
+			margin: 0;
+		}
+		input {
+			width: 90%;
+			display: inline;
+			height: 25px;
+			border: 0;
+			padding: 0 0 0 0;
+			margin: 0 0 0 20px;
+
+		}
+
+	}
+
+
+		float: right;
+		background-color: #00cc55;
+
+		&:after {
+			content: "";
+			position: absolute;
+		}
+}
+
+#message_box {
+	bottom: 0;
+	position: fixed;
+	width: 100%;
+	background-color: #002222;
+	padding: 10px;
+
+	form {
+		width: 100%%;
+		float: left;
+		margin: 0;
+	}
+
+	input {
+		width: 87%;
+		display: inline;
+		height: 25px;
+		border: 0;
+		margin: 0;
+	}
+
+	input[type=submit], button {
+		width: 10%;
+		border: 0;
+		margin-left: 3px;
+	}
+
+}
