@@ -1,0 +1,36 @@
+<template name="addProgram">
+    <div class="add_form">
+	    <h1 class ="mainTitle">Add Program</h1>
+	    
+	    <form action="#" id="program-form">
+	    Channel
+	    	<select class="dropbox" id="channel-name">
+	        	
+	        	{{#each channels _id}}
+	    			<option value="{{_id}}">{{channel}}</option>
+	  			{{/each}}
+	      	</select>
+	    	Time
+	    	<select class="dropbox" id="program-hour">
+	    		{{#each hours}}
+					<option value="{{hour}}">{{hour}}</option>
+				{{/each}}
+	    	</select>
+
+	    	<select class="dropbox" id="program-minute">
+	    		{{#each minutes}}
+					<option value="{{minute}}">{{minute}}</option>
+				{{/each}}
+	    	</select>
+	    	<p>
+	    	Program
+		    <input type="text" id="program-name" placeholder="Program Name">
+	      	</p>
+	      	<input type="submit" class="css_btn_class" id="program-done" value="Submit">
+
+	    </form>
+	</div>
+
+
+</template>
+

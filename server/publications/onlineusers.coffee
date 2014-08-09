@@ -1,6 +1,5 @@
 Meteor.publish "onlineusers", (options) ->
   Meteor.users.find()
-#	onlineUsers.find()
 
 
 Meteor.methods
