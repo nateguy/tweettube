@@ -12,8 +12,10 @@ Router.map ->
     waitOn: -> [Meteor.subscribe "programs",
           Meteor.subscribe "channels"]
   @route 'blab',
-    path: 'blab',
-    waitOn: -> [Meteor.subscribe "messages",
+    path: 'blab/:_programId',
+    data: -> return Programs.findOne(this.params._programId),
+    waitOn: -> [Meteor.subscribe "programs",
+          Meteor.subscribe "messages",
     			Meteor.subscribe "onlineusers"]
 
 

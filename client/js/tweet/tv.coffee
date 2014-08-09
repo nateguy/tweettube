@@ -29,7 +29,7 @@ getLineup = (channel) ->
 		if t[0] is undefined
 			channel_programs.push {}
 		else
-			channel_programs.push {_id: t[0]._id, time: t[0].time, name: t[0].name}
+			channel_programs.push {_id: t[0]._id, time: t[0].time, name: t[0].name, description: t[0].description}
 			#current_channel_programs = channel_programs.find({time: times.time})
 		
 	channel_programs
@@ -46,8 +46,9 @@ Template.channel.helpers
 	thisChannel: -> getLineup(this)
 		
 
-Template.tweet.events
+# Template.tweet.events
 
-	'click .panel-body': (e)->
-		Router.go('blab')
-		false
+# 	'click .panel-body': (e, t)->
+# 		console.log t
+# 		#Router.go('blab')
+# 		false
