@@ -1,25 +1,24 @@
 
 <template name="navbar">
   <nav>
-<div class="container">
+  <!--  <div class="container"> -->
 
       <!-- Static navbar -->
-      <div class="navbar navbar-default" role="navigation">
+      <div class="navbar" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
             <div class="navbar-brand"><a href="{{ pathFor 'tweet' }}">TweetTube</a></div>
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li class="register"><h2><a href="{{ pathFor 'registration' }}">Register Now</a></h2></li>
-              <li class="contact"><h2><a href="../navbar-static-top/">Contact</a></h2></li>
+              <li class="contact"><a href="#">Contact</a></li>
+              <li class="logout"><a id="logout">Logout</a></li>
               <!-- <li><a href="../navbar-fixed-top/">Fixed top</a></li> -->
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </div>
-    </div> <!-- /container -->
+   <!-- /container -->
   </nav>
 
 </template>
-

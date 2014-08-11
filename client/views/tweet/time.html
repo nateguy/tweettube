@@ -1,0 +1,24 @@
+<template name="schedule">
+
+  <div class="row">
+    <div class="col-md-1">
+
+      </div>
+
+      <div class="col-md-11">
+        
+      {{#each times}}
+        <div class="col-md-3" id="accordion">
+          <div class="panel-title">
+          <h2>{{>currenttime}}</h2>
+          </div>
+        </div>
+      {{/each}}
+      </div>
+    </div>
+
+</template>
+
+<template name="currenttime">
+{{time}}
+</template>

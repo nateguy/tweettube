@@ -3,7 +3,14 @@
 /blaze-layout
 /iron-core
 /iron-dynamic-template
+<<<<<<< HEAD
 /bootstrap-3
+=======
+/foundation
+<<<<<<< HEAD
+/handlebar-helpers
+=======
+>>>>>>> d4343bc56d0fc67966539fce32c4107d726b5531
 /Dropzonejs
 /collectionFS
 /cfs-base-package
@@ -31,4 +38,8 @@
 /reactive-property
 /micro-queue
 /ui-dropped-event
+<<<<<<< HEAD
 /foundation
+=======
+>>>>>>> 9c7d0938cb86b420d899ebd2d14f14ac9f6b20d8
+>>>>>>> d4343bc56d0fc67966539fce32c4107d726b5531

@@ -52,6 +52,3 @@ Template.upload.events
   #       alert "Image is not uploaded"
 Template.registration.helpers
   profileImage: () -> Images.find().fetch()[0].url()
-
-
-return

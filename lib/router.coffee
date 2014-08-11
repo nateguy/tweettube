@@ -1,22 +1,37 @@
 Router.map ->
 
-  @route 'login', {path: '/tweet'}
+  @route 'login', {path: '/'}
   @route 'registration'
-  @route 'tweet'
+  @route 'tweet',
+    waitOn: -> [Meteor.subscribe "programs",
+          Meteor.subscribe "channels"]
   @route 'edit'
+  @route 'addChannel',
+    waitOn: -> Meteor.subscribe "channels"
+  @route 'addProgram',
+    waitOn: -> [Meteor.subscribe "programs",
+          Meteor.subscribe "channels"]
+  @route 'blab',
+    path: 'blab/:_programId',
+    data: -> return Programs.findOne(this.params._programId),
+    waitOn: -> [Meteor.subscribe "programs",
+          Meteor.subscribe "messages",
+    			Meteor.subscribe "onlineusers"]
+
+
 
 #   @route 'blab',
     # waitOn: -> Meteor.subscribe "messages"
 
-# autoLogin = (pause) ->
-#   Router.go 'tweet' if Meteor.userId()
+autoLogin = (pause) ->
+  Router.go 'tweet' if Meteor.userId()
 
-# requireLogin = (pause) ->
-#   unless Meteor.userId()
-#     Router.go 'login'
+requireLogin = (pause) ->
+   unless Meteor.userId()
+     Router.go 'login'
 
-# Router.onBeforeAction autoLogin,
-#   only: ['login', 'registration']
+Router.onBeforeAction autoLogin,
+  only: ['login', 'registration']
 
-# Router.onBeforeAction requireLogin,
-#   only: 'tweet'
+Router.onBeforeAction requireLogin,
+   only: 'tweet'

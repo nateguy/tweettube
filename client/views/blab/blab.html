@@ -1,0 +1,28 @@
+<template name="blab">
+		<div id="blab-head">
+			<h2>{{name}}</h2>
+			{{description}}
+		</div>
+		<div id="onlinelist">
+		<span>Who's online?</span>
+
+		{{#each allUsers }}
+			{{> onlineuser }}
+		{{/each}}
+		</div>
+		<div id="messages">
+			<div id="count"></div>
+
+			{{#each allMessages }}
+
+					{{> message }}
+
+			{{/each}}
+		</div>
+
+
+		<div id="message_box">
+		{{> message_box }}
+		</div>
+
+</template>

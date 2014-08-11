@@ -4,7 +4,6 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-autopublish
 insecure
 less
 coffeescript
@@ -20,3 +19,4 @@ accounts-password
 foundation
 accounts-ui
 cfs-gridfs
+handlebar-helpers
