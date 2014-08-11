@@ -13,13 +13,44 @@
     <img src="{{profileImage}}" class ="imgupload">
   </div>
   <div id="registration-view">
-    <form action="#" id="registration-form" class="regis-form">
-      <input type="email" id="accounts-email" placeholder="email" autofocus>
-      <input type="password" id="accounts-password" placeholder="password">
-      <input type="password" id="accounts-confirm" placeholder="confirm password">
-      <input type="nickname" id="accounts-nickname" placeholder="Nickname">
-      <input type="age" id="accounts-age" placeholder="Age">
-      <select class="dropbox" id="accounts-gender" name="gender">
+    <form action="#" id="registration-form" class="form-horizontal" role="form">
+   <div class="form-group">
+    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+      <div class="col-sm-10">
+      <input type="email" class="form-control" id="accounts-email" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="accounts-password" placeholder="Password">
+    </div>
+  </div>
+   <div class="form-group">
+    <label for="inputConfirm" class="col-sm-2 control-label">Confirm Password</label>
+      <div class="col-sm-10">
+      <input type="confirm" class="form-control" id="accounts-confirm" placeholder="Confirm Password">
+    </div>
+  </div>
+   <div class="form-group">
+    <label for="inputNickname" class="col-sm-2 control-label">Nickname</label>
+      <div class="col-sm-10">
+      <input type="nickname" class="form-control" id="accounts-nickname" placeholder="Nickname">
+    </div>
+  </div>
+   <div class="form-group">
+    <label for="inputAge" class="col-sm-2 control-label">Age</label>
+      <div class="col-sm-10">
+      <input type="age" class="form-control" id="accounts-age" placeholder="Age">
+    </div>
+  </div>
+
+      <!-- <input type="email" id="accounts-email" placeholder="email" autofocus>
+      <input type="password" id="accounts-password" placeholder="password"> -->
+      <!-- <input type="password" id="accounts-confirm" placeholder="confirm password"> -->
+      <!-- <input type="nickname" id="accounts-nickname" placeholder="Nickname"> -->
+      <!-- <input type="age" id="accounts-age" placeholder="Age"> -->
+      <select class="form control" id="accounts-gender" name="gender">
         <option value="" selected="selected">Gender</option>
         <option value="1">Male</option>
         <option value="2">Female</option>
