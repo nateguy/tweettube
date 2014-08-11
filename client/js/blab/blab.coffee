@@ -3,17 +3,16 @@
 getEmail = ->
 	Meteor.user().emails[0].address
 
-postMessage = (email, content) ->
+postMessage = (user, content, program) ->
 	time = (new Date()).getTime()
-	{ email: email, content: content, timestamp: time}
+	{ userId: user, content: content, programId: program, timestamp: time}
 
 counter_reply = ->
 	$('.counter_reply').html(Messages.find().count())
 	return false
 
-Template.blab.current_email = ->
-	console.log this
-	return getEmail() == this.email
+# Template.blab.current_email = ->
+# 	return getEmail() == this.email
 
 Template.blab.helpers
 	allMessages: -> Messages.find({})
@@ -28,18 +27,18 @@ Template.onlineuser.helpers
 
 Template.message.helpers
 	belongstoUser: ->
-		return (this.email == getEmail())
+		return (this.userId == Meteor.userId())
 	replies: ->
 		if this.responses
 			return this.responses.length
 		else
 			return 0
+	nickname: ->
+		user = Meteor.users.find(this.userId).fetch()
+		return user[0].profile.name
 
 
 Template.message.rendered = ->
-	#j = new Deps.Dependancy
-	
-	#	j.changed()
 	
 	$(document).scrollTop( $(document).height() )
 	t = 0
@@ -51,12 +50,10 @@ Template.message.rendered = ->
 	else
 		$(".counter_reply.#{this.data._id}").html(t + " Replies")
 	
-	console.log "You are connected? " + Meteor.status().connected
-	console.log Meteor.user()._id
+	console.log Meteor.user()._id + " is online"
 
 	Meteor.call('UserUpsert', Meteor.user()._id, getEmail())
 	setInterval (-> Meteor.call('UserUpsert', Meteor.user()._id, getEmail() )), 5000
-	console.log 
 	
 
 Template.message.events
@@ -69,28 +66,29 @@ Template.message.events
 			replies_element.style.display = ""
 	'click #deletereply2': (e) ->
 		confirm_delete = confirm "Are you sure you want to delete this message?"
-
+		if confirm_delete
+			this.remove()
 		console.log this.parentElement
 		e.preventDefault()
 		false
 
 	'click #deletereply': (e) ->
 		confirm_delete = confirm "Are you sure you want to delete this message?"
-		if confirm_delete and (this.email == getEmail())
+		if confirm_delete and (this.userId == Meteor.userId())
 			Messages.remove this._id
 		e.preventDefault()
 		false
 
 
 
-	'click #reply': (e) ->
-		console.log "reply"
-		console.log this._id
-		t = prompt "Reply message:"
-		email = getEmail()
-		Messages.update({_id:this._id},
-			{$addToSet: {responses: {email: email, content: t}}})
-		console.log this
+	# 'click #reply': (e) ->
+	# 	console.log "reply"
+	# 	console.log this._id
+	# 	t = prompt "Reply message:"
+	# 	email = getEmail()
+	# 	Messages.update({_id:this._id},
+	# 		{$addToSet: {responses: {email: email, content: t}}})
+	# 	console.log this
 
 
 
@@ -112,11 +110,11 @@ Template.reply_box.events
 		input = t.find('#reply-box-content')
 
 		message = input.value
-		email = getEmail()
+		user = Meteor.userId()
 
 		input.value = ""
 		Messages.update({_id:t.data._id},
-			{$addToSet: {responses: {email: email, content: message}}})
+			{$addToSet: {responses: {userId: user, content: message}}})
 		
 		e.preventDefault()
 		false 
@@ -126,11 +124,11 @@ Template.message_box.events
 
 		input = t.find('#message-box-content')
 		message = input.value
-		email = getEmail()
-		responses = {}
+		userId = Meteor.userId()
+		program = Session.get('programId')
 		input.value = ""
 
-		Messages.insert(postMessage(email, message))
+		Messages.insert(postMessage(userId, message, program))
 
 		e.preventDefault()
 		false 
