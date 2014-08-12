@@ -1,11 +1,20 @@
 <template name="tweet">
 
+
 <h1 class ="mainTitle">TV Schedule</h1>
 <div class="grid">
 	{{>schedule}}
   	{{#each allChannels }}
-    	{{>channel}}
   	{{/each}}
+
+
+</div>
+
+<div class="Channel-name">
+  {{ >apiChannel1}}
+  {{ >apiChannel2}}
+  {{ >apiChannel3}}
+  {{ >apiChannel4}}
 
 </div>
     <div class ="links">
@@ -14,3 +23,30 @@
     </div>
 
 </template>
+
+
+
+<template name="apiChannel1">
+  <h2>{{showName1}}</h2>
+  <div class="show1"></div>
+</template>
+
+
+<template name="apiChannel2">
+  <h2>{{showName2}}</h2>
+  <div class="show2"></div>
+</template>
+
+
+<template name="apiChannel3">
+  <h2>{{showName3}}</h2>
+  <div class="show3"></div>
+</template>
+
+<template name="apiChannel4">
+  <h2>{{showName4}}</h2>
+  <div class="show4"></div>
+</template>
+
+
+
