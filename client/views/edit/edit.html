@@ -1,13 +1,14 @@
-
-<!-- <template name="upload">
+<template name="upload">
   <div id="dropzone" class="dropzone">
     <div style="text-align: center; color: gray;">Drop file to upload</div>
   </div>
-</template> -->
+</template>
 
 <template name="edit">
-  <!-- {{> upload}} -->
-
+  {{> upload}}
+  <div class = "imgdisplay">
+    <img src="{{profileImage}}" class ="imgupload">
+  </div>
   <div id="edit-view">
     <h1>Edit Profile</h1>
     <form action="#" id="edit-form">
@@ -19,7 +20,7 @@
         <option value="Female">Female</option>
       </select>
       <select class="dropbox" id="accounts-favorite" value="{{favorite}}" name="favorite">
-        <option value="" selected="selected">Favortite Genre</option>
+        <option value="" selected="selected">Favorite Genre</option>
         <option value="Action">Action</option>
         <option value="Adventure">Adventure</option>
         <option value="Comedy">Comedy</option>

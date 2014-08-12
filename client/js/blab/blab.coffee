@@ -17,6 +17,7 @@ counter_reply = ->
 Template.blab.helpers
 	allMessages: -> Messages.find({})
 	allUsers: -> Meteor.users.find({})
+	getTitle: -> Session.get('programId')
 
 Template.onlineuser.helpers
 	isOnline: ->
