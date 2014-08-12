@@ -7,8 +7,6 @@
     "ui-dropped-event": {},
     "foundation": {},
     "handlebar-helpers": {},
-    "Dropzonejs": {},
-    "collectionFS": {},
-    "ui-dropped-event": {}
+    "collection-api": {}
   }
 }

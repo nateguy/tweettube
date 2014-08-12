@@ -35,20 +35,13 @@ Template.registration.events
     e.preventDefault()
     false
 
-Template.upload.events
-  "dropped #dropzone": (event, temp) ->
-    console.log "files dropped"
-
-    FS.Utility.eachFile event, (file) ->
-      Images.insert file, (err, fileObj) ->
-        console.log "inserted"
-
-
   # Uploads = Images.find.fetch()[0]
   #   uploads.isImage()
   #     if uploads.isImage() == true
   #       puts "upload"
   #     else
   #       alert "Image is not uploaded"
+
 Template.registration.helpers
+  
   profileImage: () -> Images.find().fetch()[0].url()

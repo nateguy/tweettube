@@ -8,24 +8,22 @@ Router.map ->
   @route 'edit'
   @route 'addChannel',
     waitOn: -> Meteor.subscribe "channels"
+
   @route 'test'
+
   @route 'addProgram',
     waitOn: -> [Meteor.subscribe "programs",
           Meteor.subscribe "channels"]
   @route 'blab',
-    
-    path: 'blab/:_programId',
-    data: -> return Programs.findOne(this.params._programId),
+    path: 'blab/:ProgramId',
+    data: -> return {
+      title: this.params.title
+      },
     waitOn: ->
-      Session.set('programId', this.params._programId)
+      Session.set('programId', this.params.ProgramId)
       [Meteor.subscribe "programs",
-          Meteor.subscribe "programMessages",this.params._programId,
+          Meteor.subscribe "programMessages",this.params.ProgramId,
           Meteor.subscribe "onlineusers"]
-
-    
-
-#   @route 'blab',
-    # waitOn: -> Meteor.subscribe "messages"
 
 autoLogin = (pause) ->
   Router.go 'tweet' if Meteor.userId()

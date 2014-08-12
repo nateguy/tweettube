@@ -20,3 +20,5 @@ foundation
 accounts-ui
 cfs-gridfs
 handlebar-helpers
+collection-api
+http
