@@ -58,8 +58,8 @@ Template.message.rendered = ->
 
 Template.message.events
 	'click #seereplies': (e) ->
-
-		replies_element = e.currentTarget.parentElement.parentElement.children[1]
+		console.log e.currentTarget.parentElement.nextElementSibling
+		replies_element = e.currentTarget.parentElement.nextElementSibling
 		if replies_element.style.display is ""
 			replies_element.style.display = "table-cell"
 		else

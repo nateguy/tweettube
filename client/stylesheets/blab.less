@@ -1,5 +1,6 @@
 .online_user_field {
 	margin-top: 5px;
+	color: #ffffff;
 
 	.online {
 		background-color: green;
@@ -31,12 +32,19 @@
 }
 
 #onlinelist {
-	display: table-cell;
+	display: block;
+	float: left;
 	vertical-align: top;
-	width: 300px;
-	padding: 100px 20px 0px 20px;
+	width: 250px;
+	height: 100%;
+	padding: 60px 20px 0px 20px;
+	background-color: #333333;
+	color: #ffffff;
 
-	span {
+
+	h2 {
+		margin-top: 0;
+		font-size: 14pt;
 		font-weight: bold;
 	}
 }
@@ -50,7 +58,7 @@
 	top: 40px;
 	margin-bottom: 10px;
 	z-index: 9;
-	background-color: rgba(255,255,255,0.8);
+	background-color: rgb(255,255,255);
 	color: #000000;
 	h2 {
 		margin: 10px 0 10px 0;
@@ -61,35 +69,48 @@
 #messages {
 	width: 100%;
 	display: table-cell;
-	padding: 100px 20px 0px 20px;
-
+	text-align: left;
+	padding: 60px 20px 100px 20px;
+	background-color: #ffffff;
+	ul {
+		list-style-type: none;
+	}
 
 }
 
 
 .message {
-	width: 100%;
+	
 	opacity: 1;
 	padding: 2px;
-	margin: 3px 0;
+	margin: 3px 0 0 0;
 	position: relative;
 	border-radius: 10px;
-  	box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.4);
+  	// box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.4);
+  	width: 100%;
+	.col-image {
+		width: 80px;
+		display: table-cell;
+	}
+
+	.col-content {
+		width: 100%;
+		display: table-cell;
+	}
 
   	.row {
   		margin-top: 0;
   		padding-top: 0;
   	}
 	
-	&:last-of-type {
-		margin-bottom: 100px;
-	}
+	// &:last-of-type {
+	// 	margin-bottom: 100px;
+	// }
 
 	.user {
-		float: left;
-		font-size: 10pt;
+		vertical-align: top;
+		font-size: 12pt;
 		font-weight: bold;
-		border-bottom: 1px solid #009999;
 		text-align: left;
 	}
 
@@ -142,19 +163,19 @@
 			margin: 0;
 		}
 		input {
-			width: 90%;
+			width: 100%;
 			display: inline;
 			height: 25px;
 			border: 0;
+			font-size: 12pt;
 			padding: 0 0 0 0;
-			margin: 0 0 0 20px;
+			margin: 0 0 0 0;
 
 		}
 
 	}
 
 
-		float: right;
 		background-color: #80cbc4;
 
 		&:after {

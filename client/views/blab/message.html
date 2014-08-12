@@ -1,19 +1,16 @@
 <template name="message">
 	<div class="message">
-		<div class="row">
-			<div class="small-12 columns user">
+		<div class="col-image user">
 				{{ nickname }}
-			</div>
-		</div>
+		</div>		
+		<div class="col-content">
 		<div class="row">
+
+
 			<div class="small-12 columns content">
 				{{ content }}
 			</div>
 
-		</div>
-
-
-		<div class="row">
 			<div class="small-12 columns reply_link">		
 				<a href="#" id="seereplies">{{replies}} replies</a>
 				- <a href="#" id="seereplies">Reply</a>
@@ -40,14 +37,14 @@
 				{{/each}}
 				
 				
-				<div class="row">
+				
 
 					<div class="small-12 columns replybox">
-					<span id="reply_span">Reply:</span> {{> reply_box }}
+					{{> reply_box }}
 					</div>
-				</div>
+				
 			</div>
-
+			</div>
 		</div>
 	</div>
 	
