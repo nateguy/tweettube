@@ -8,6 +8,7 @@ Router.map ->
   @route 'edit'
   @route 'addChannel',
     waitOn: -> Meteor.subscribe "channels"
+  @route 'test'
   @route 'addProgram',
     waitOn: -> [Meteor.subscribe "programs",
           Meteor.subscribe "channels"]

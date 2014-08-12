@@ -31,7 +31,7 @@ getLineup = (channel) ->
 		else
 			channel_programs.push {_id: t[0]._id, time: t[0].time, name: t[0].name, description: t[0].description}
 			#current_channel_programs = channel_programs.find({time: times.time})
-		
+	
 	channel_programs
 
 
@@ -44,6 +44,12 @@ Template.tweet.helpers
 Template.channel.helpers
 	allPrograms: -> Programs.find({})
 	thisChannel: -> getLineup(this)
+
+Template.program.helpers
+	timewidth: -> 
+
+		console.log this.time
+		return 0
 		
 
 # Template.tweet.events
