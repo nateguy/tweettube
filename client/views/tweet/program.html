@@ -4,15 +4,20 @@
   <div class="col-md-{{duration}}" id="accordion">
     <div class="panel panel-default">
 
-      <div class ="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#{{ProgramId}}">{{Title}}</a>
-      </div>
+      
+        <a data-toggle="collapse" data-parent="#accordion" href="#{{ProgramId}}">
+          <div class ="panel-title">
+
+          {{Title}}
+          </div>
+        </a>
+      
 
       <div id="{{ProgramId}}" class="panel-collapse collapse">
         <div class="panel-body">
           <!-- <a href='blab/{{ProgramId}}'>{{Subcategory}}</a> -->
-          {{duration}}
-          <a class="program" href='#'>{{Subcategory}}</a>
+          {{EpisodeTitle}}<br>
+          <a class="program" href='#'>Go to Chatroom</a>
         </div>
       </div>
     </div>
