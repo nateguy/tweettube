@@ -1,7 +1,7 @@
 <template name="program">
 
 
-  <div class="col-md-3" id="accordion">
+  <div class="col-md-{{duration}}" id="accordion">
     <div class="panel panel-default">
 
       <div class ="panel-title">
@@ -11,6 +11,7 @@
       <div id="{{ProgramId}}" class="panel-collapse collapse">
         <div class="panel-body">
           <!-- <a href='blab/{{ProgramId}}'>{{Subcategory}}</a> -->
+          {{duration}}
           <a class="program" href='#'>{{Subcategory}}</a>
         </div>
       </div>

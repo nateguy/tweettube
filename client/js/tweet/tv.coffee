@@ -47,6 +47,7 @@ getLineup = (channel) ->
 
 	programs = channel.Airings
 
+
 	# console.log "you are on " + channel.DisplayName
 	# for times in lineup
 	# 	time = times.time
@@ -57,7 +58,7 @@ getLineup = (channel) ->
 	# 		channel_programs.push {_id: t[0]._id, time: t[0].time, name: t[0].name, description: t[0].description}
 	# 	#current_channel_programs = channel_programs.find({time: times.time})
 	if programs.length > 4
-		programs = programs.slice(0, 3)
+		programs = programs.slice(0, 4)
 	console.log programs
 	programs
 
@@ -71,6 +72,18 @@ getChannels = ->
 		console.log channels
 		return channels
 
+getCurrentTimeSlot = ->
+	t = new Date()
+	hours = t.getHours()
+	minutes = t.getMinutes()
+	year = t.getFullYear()
+	month = t.getMonth()
+	day = t.getDate()
+
+	if minutes >= 30
+		return new Date(year, month, day, hours, 30, 0)
+	else
+		return new Date(year, month, day, hours, 0, 0)
 
 Template.schedule.times = ->
 	getNextFourHours()
@@ -78,6 +91,7 @@ Template.schedule.times = ->
 Template.tweet.helpers
 	allChannels: -> getChannels()
 	#allChannels: -> Channels.find({})
+
 
 
 Template.channel.helpers
@@ -89,7 +103,27 @@ Template.program.helpers
 
 		console.log this.time
 		return 0
+	duration: -> 
+
+		currentTimeSlot = new Date(getCurrentTimeSlot())
+		EndTimeSlot = new Date(getCurrentTimeSlot())
+
+		EndTimeSlot.setHours(currentTimeSlot.getHours() + 2)
 		
+		airingStartTime = new Date(this.AiringTime)
+		airingEndTime = new Date(this.AiringTime)
+
+		airingEndTime.setMinutes(airingStartTime.getMinutes() + this.Duration)
+
+		currentTimeSlotDiscreptancy = (airingStartTime - currentTimeSlot) / 60000
+
+		if currentTimeSlotDiscreptancy < 0
+			return (currentTimeSlotDiscreptancy + this.Duration) / 10
+		else
+			if airingEndTime > EndTimeSlot
+				return ((EndTimeSlot - airingStartTime) / 60000) / 10
+			else
+				return this.Duration / 10
 
 # Template.tweet.events
 
