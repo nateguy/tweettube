@@ -1,8 +1,17 @@
+Template.navbar.events
+
+ 'click #profile': (e) ->
+     Router.go('edit')
+     e.preventDefault()
+     false
+
+
+
 
 Template.upload.events
 	"dropped #dropzone": (event, temp) ->
 		console.log "files dropped"
-	
+
 		FS.Utility.eachFile event, (file) ->
 			Images.insert file, (err, fileObj) ->
 				Meteor.users.update(Meteor.userId(), { $set: {"profile.image": fileObj._id}})

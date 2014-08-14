@@ -8,19 +8,19 @@
 
 
 <template name="registration">
-    <h1>Registration</h1>
+    <h1 class="reg-header">Registration</h1>
   <div id="registration-view">
     <form action="#" id="registration-form" class="form-horizontal" role="form">
    <div class="form-group">
     <label for="inputEmail" class="col-sm-2 control-label">Email</label>
       <div class="col-sm-10">
-      <input type="email" class="form-control" id="accounts-email" placeholder="Email">
+      <input type="" class="form-control" id="accounts-email" placeholder="Email">
     </div>
   </div>
   <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
     <div class="col-sm-10">
-      <input type="password" class="form-control" id="accounts-password" placeholder="Password">
+      <input type=" " class="form-control" id="accounts-password" placeholder="Password">
     </div>
   </div>
    <div class="form-group">
@@ -41,12 +41,12 @@
       <input type="age" class="form-control" id="accounts-age" placeholder="Age">
     </div>
   </div>
-      <select class="form control" id="accounts-gender" name="gender">
+      <select class="select-control" id="accounts-gender" name="gender">
         <option value="" selected="selected">Gender</option>
         <option value="1">Male</option>
         <option value="2">Female</option>
       </select>
-      <select class="dropbox" id="accounts-favorite" name="favorite">
+      <select class="select-control" id="accounts-favorite" name="favorite">
         <option value="" selected="selected">Favortite Genre</option>
         <option value="1">Action</option>
         <option value="2">Adventure</option>
@@ -61,7 +61,9 @@
         <option value="11">Sci-Fi</option>
         <option value="12">Triller</option>
       </select>
+      <div class="submit-button">
       <input type="submit" class="css_btn_class" id="profile-done" value="done">
+      </div>
 
     </form>
       <div class="other-links">

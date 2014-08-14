@@ -38,17 +38,6 @@ getLineup = (channel) ->
 
 
 getChannels = ->
-<<<<<<< HEAD
-
-		channels = []
-		temp = Session.get('schedules')
-		for i in [0..(temp.length-1)]
-			channels.push temp[i]
-		console.log channels
-		return channels
-
-=======
-		
 	channels = []
 	channels = Session.get('schedules')
 	return channels
@@ -72,7 +61,6 @@ getCurrentTimeSlot = ->
 		return new Date(year, month, day, hours, 30, 0)
 	else
 		return new Date(year, month, day, hours, 0, 0)
->>>>>>> upstream/master
 
 Template.schedule.times = ->
 	getLineupTimes()
@@ -92,14 +80,7 @@ Template.channel.helpers
 	thisChannel: -> getLineup(this)
 
 Template.program.helpers
-<<<<<<< HEAD
-	timewidth: ->
-
-		console.log this.time
-		return 0
-
-=======
-	duration: -> 
+	duration: ->
 
 		currentTimeSlot = new Date(getCurrentTimeSlot())
 		EndTimeSlot = getEndTimeSlot()
@@ -116,11 +97,3 @@ Template.program.helpers
 				return Math.floor(((EndTimeSlot - airingStartTime) / 60000) / 10)
 			else
 				return Math.round(this.Duration / 10)
->>>>>>> upstream/master
-
-# Template.tweet.events
-
-# 	'click .panel-body': (e, t)->
-# 		console.log t
-# 		#Router.go('blab')
-# 		false
