@@ -76,13 +76,15 @@ Template.channel.helpers
 	allPrograms: -> Programs.find({})
 	thisChannel: -> getLineup(this)
 
+getOnlineUsers = ->
+	return Meteor.users.find({}).fetch()
 
 
 Template.program.helpers
 	usersOnline: ->
 
-		i = Meteor.users.find({})
-		i.length
+		usersonline = Meteor.users.find({online: true, lastroom: this.ProgramId}).fetch()
+		usersonline.length
 
 	duration: -> 
 

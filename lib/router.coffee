@@ -4,7 +4,8 @@ Router.map ->
   @route 'registration'
   @route 'tweet',
     waitOn: -> [Meteor.subscribe "programs",
-          Meteor.subscribe "channels"]
+          Meteor.subscribe "channels",
+          Meteor.subscribe "onlineusers"]
   @route 'edit'
   @route 'addChannel',
     waitOn: -> Meteor.subscribe "channels"

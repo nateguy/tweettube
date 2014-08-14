@@ -4,7 +4,6 @@
   <div class="col-md-{{duration}}" id="accordion">
     <div class="panel panel-default">
 
-      
         <a data-toggle="collapse" data-parent="#accordion" href="#{{ProgramId}}">
           <div class ="panel-title">
 
@@ -13,36 +12,13 @@
         </a>
       
 
-      <div id="{{ProgramId}}" class="panel-collapse collapse">
-        <div class="panel-body">
-          <!-- <a href='blab/{{ProgramId}}'>{{Subcategory}}</a> -->
-          {{EpisodeTitle}}
-          {{usersOnline}}<br>
+        <div id="{{ProgramId}}" class="panel-collapse collapse">
+          <div class="panel-body">
+          {{usersOnline}} users connected<br>
           <a class="program" href='#'>Go to Chatroom</a>
+          </div>
         </div>
-      </div>
     </div>
   </div>
 </template>
 
-
-
-  <!-- 
-<template name="program">
-
-  <div class="col-{{timewidth}}" id="accordion">
-    <div class="panel panel-default">
-
-      <div class ="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#{{_id}}">{{name}}</a>
-      </div>
-
-      <div id="{{_id}}" class="panel-collapse collapse">
-        <div class="panel-body">
-          <a href='blab/{{_id}}'>{{description}}</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</template> -->

@@ -1,13 +1,9 @@
-# Meteor.publish "onlineusers", (options) ->
-#   Meteor.users.find()
-
-Meteor.publish "onlineusers", (isOnline, programId) ->
-  Meteor.users.find()
+Meteor.publish "onlineusers", (options) ->
+   Meteor.users.find()
 
 
 Meteor.methods
   UserUpsert: (id, programId) ->
-  #  console.log "upsert: " + id + " " + programId
     timestamp = (new Date()).getTime()
     Meteor.users.upsert({_id: id}, {$set: {lastseen: timestamp, lastroom: programId, online: true}})
 
@@ -28,12 +24,8 @@ helper = ->
 
     Fiber = Npm.require('fibers')
     Fiber(-> checkTime()).run()
-    console.log "reached helper"
-
-
 
 Meteor.onConnection ->
 
-  console.log "new connection"
   setInterval (-> helper()), 10000
-  console.log "passed setinterval"
+
