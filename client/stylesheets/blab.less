@@ -106,8 +106,9 @@
 	padding: 2px;
 	margin: 3px 0 0 0;
 	position: relative;
-	border-radius: 10px;
+	
   	// box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.4);
+
   	width: 100%;
 	.col-image {
 		width: 80px;
@@ -117,6 +118,8 @@
 	.col-content {
 		width: 100%;
 		display: table-cell;
+		background-color: #80cbc4;
+		border-radius: 10px;
 	}
 
   	.row {
@@ -172,34 +175,38 @@
 }
 
 	.replybox {
+
+		.input-group {
+			display: inline;
+			input {
+			font-size: 12pt;
+			}
+
+		}
+
 		text-align: left;
 		margin-top: 5px;
 		margin-bottom: 5px;
-		border: 2px solid #333333;
 
-		#reply_span {
-			font-size: 11pt;
-			float: left;
-		}
 
 		form {
 			margin: 0;
 		}
-		input {
-			width: 100%;
-			display: inline;
-			height: 25px;
-			border: 0;
-			font-size: 12pt;
-			padding: 0 0 0 0;
-			margin: 0 0 0 0;
+		// input {
+		// 	width: 100%;
+		// 	display: inline;
+		// 	height: 25px;
+		// 	border: 0;
+		// 	font-size: 12pt;
+		// 	padding: 0 0 0 0;
+		// 	margin: 0 0 0 0;
 
-		}
+		// }
 
 	}
 
 
-		background-color: #80cbc4;
+		
 
 		&:after {
 			content: "";

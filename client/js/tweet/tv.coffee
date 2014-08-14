@@ -32,7 +32,6 @@ getLineup = (channel) ->
 	#remove all airings that start after the end of the 2 hour window
 	for program in channel.Airings
 		unless getAiringStartTime(program) >= getEndTimeSlot()
-			console.log program
 			programs.push program
 	programs
 
@@ -68,7 +67,6 @@ Template.schedule.times = ->
 
 Template.program.events
 	'click .program': (e, t) ->
-		console.log this
 		Router.go('blab', {ProgramId: this.ProgramId, title: this.Title})
 		e.preventDefault()
 		false
@@ -80,7 +78,14 @@ Template.channel.helpers
 	allPrograms: -> Programs.find({})
 	thisChannel: -> getLineup(this)
 
+
+
 Template.program.helpers
+	usersOnline: ->
+
+		i = Meteor.users.find({online: true, lastroom: this.ProgramId}).fetch()
+		console.log i
+
 	duration: -> 
 
 		currentTimeSlot = new Date(getCurrentTimeSlot())

@@ -22,10 +22,14 @@ Router.map ->
     waitOn: ->
       Meteor.call "programApi", this.params.ProgramId,
         (error, results) ->
-          Session.set('programData', results.data.ProgramDetailsResult.Program)
+          programData = trimData(results.data.ProgramDetailsResult.Program)
+          Session.set('programData', programData)
       [Meteor.subscribe "programs",
           Meteor.subscribe "programMessages",this.params.ProgramId,
           Meteor.subscribe "onlineusers"]
+
+trimData = (x) ->
+  return {ProgramId: x.ProgramHandle.Id, CopyText: x.CopyText, MasterTitle: x.MasterTitle}
 
 autoLogin = (pause) ->
   Router.go 'tweet' if Meteor.userId()

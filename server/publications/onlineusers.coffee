@@ -1,12 +1,15 @@
-Meteor.publish "onlineusers", (options) ->
+# Meteor.publish "onlineusers", (options) ->
+#   Meteor.users.find()
+
+Meteor.publish "onlineusers", (isOnline, programId) ->
   Meteor.users.find()
 
 
 Meteor.methods
-	UserUpsert: (id, email) ->
-		
+  UserUpsert: (id, programId) ->
+  #  console.log "upsert: " + id + " " + programId
     timestamp = (new Date()).getTime()
-    Meteor.users.upsert({_id: id}, {$set: {lastseen: timestamp, online: true}})
+    Meteor.users.upsert({_id: id}, {$set: {lastseen: timestamp, lastroom: programId, online: true}})
 
 helper = ->
     checkTime = ->
@@ -16,10 +19,8 @@ helper = ->
           time = parseInt((new Date()).getTime())
         else
           time = parseInt((new Date()).getTime() - m.lastseen)
-        console.log  "id: "+ m._id + ", time lapse: "+ time
+        #console.log  "id: "+ m._id + ", time lapse: "+ time
         if (time < 10000)
-      #     console.log "change to false" + m.email
-      #     console.log m
           Meteor.users.upsert({_id:m._id}, {$set: {online:true}})
         else
           Meteor.users.upsert({_id:m._id}, {$set: {online:false}})          
@@ -28,17 +29,7 @@ helper = ->
     Fiber = Npm.require('fibers')
     Fiber(-> checkTime()).run()
     console.log "reached helper"
-    
-      # console.log Meteor.users.find().fetch()
-      # for i in Meteor.users.find().fetch()
-        # console.log "onlineusers"
-      # for m in onlineusers
-      #   time = parseInt((new Date()).getTime() - m.lastseen)
-      #   console.log email + " " + time + "id: "+ _id
-      #   if (time > 1000)
-      #     console.log "change to false" + m.email
-      #     console.log m
-      #     Meteor.users.upsert({_id:m._id}, {$set: {online:false}})
+
 
 
 Meteor.onConnection ->
