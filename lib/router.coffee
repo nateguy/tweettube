@@ -20,7 +20,9 @@ Router.map ->
       title: this.params.title
       },
     waitOn: ->
-      Session.set('programId', this.params.ProgramId)
+      Meteor.call "programApi", this.params.ProgramId,
+        (error, results) ->
+          Session.set('programData', results.data.ProgramDetailsResult.Program)
       [Meteor.subscribe "programs",
           Meteor.subscribe "programMessages",this.params.ProgramId,
           Meteor.subscribe "onlineusers"]

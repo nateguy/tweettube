@@ -11,20 +11,31 @@ counter_reply = ->
 	$('.counter_reply').html(Messages.find().count())
 	return false
 
-# Template.blab.current_email = ->
-# 	return getEmail() == this.email
+getTitle = ->
+	programData = Session.get('programData')
+	return programData.MasterTitle
+
+getDescription = ->
+	programData = Session.get('programData')
+	return programData.CopyText
+
+getID = ->
+	programData = Session.get('programData')
+	console.log programData
+	return programData.ProgramHandle.Id
 
 Template.blab.helpers
 	allMessages: -> Messages.find({})
 	allUsers: -> Meteor.users.find({})
-	getTitle: -> Session.get('programId')
+	getTitle: -> return getTitle()
+	getDescription: -> return getDescription()
 
 Template.onlineuser.helpers
 	isOnline: ->
 		return this.online
 	email: ->
 		return this.emails[0].address
-#	console.log onlineUsers.find({})
+
 
 Template.message.helpers
 	belongstoUser: ->
@@ -40,7 +51,7 @@ Template.message.helpers
 
 
 Template.message.rendered = ->
-	
+
 	$(document).scrollTop( $(document).height() )
 	t = 0
 	if this.data.responses
@@ -65,6 +76,7 @@ Template.message.events
 			replies_element.style.display = "table-cell"
 		else
 			replies_element.style.display = ""
+
 	'click #deletereply2': (e) ->
 		confirm_delete = confirm "Are you sure you want to delete this message?"
 		if confirm_delete
@@ -126,7 +138,7 @@ Template.message_box.events
 		input = t.find('#message-box-content')
 		message = input.value
 		userId = Meteor.userId()
-		program = Session.get('programId')
+		program = getID()
 		input.value = ""
 
 		Messages.insert(postMessage(userId, message, program))

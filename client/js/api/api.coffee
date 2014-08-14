@@ -4,4 +4,3 @@ $ ->
 			Meteor.call "RoviApi",
 			(error, results) ->
 				Session.set('schedules', results.data.GridScheduleResult.GridChannels)
-
