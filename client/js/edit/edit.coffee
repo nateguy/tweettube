@@ -12,6 +12,9 @@ Template.edit.helpers
 	profileImage: () ->
 		Images.findOne({_id: Meteor.user().profile.image}).url()
 
+	profileImageThumb: () ->
+    	Images.findOne({_id: Meteor.user().profile.image}).url({store: 'thumbs'})
+
 
 Template.edit.events
 

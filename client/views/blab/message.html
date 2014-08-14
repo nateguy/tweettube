@@ -11,7 +11,7 @@
 				{{ content }}
 			</div>
 
-			<div class="small-12 columns reply_link">		
+			<div class="small-8 columns reply_link">		
 				<a href="#" id="seereplies">{{replies}} replies</a>
 				- <a href="#" id="seereplies">Reply</a>
 
@@ -20,6 +20,9 @@
 				{{#if belongstoUser}}
 				- <a href="#" id="deletereply">Delete</a>
 				{{/if}}
+			</div>
+			<div class="small-4 columns timepost">
+				{{timeposted}} minutes ago
 			</div>
 			
 			<div class="small-12 columns replies">

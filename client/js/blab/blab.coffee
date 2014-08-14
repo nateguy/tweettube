@@ -12,7 +12,6 @@ counter_reply = ->
 	return false
 
 getTitle = ->
-	
 	programData = Session.get('programData')
 	return programData.MasterTitle
 
@@ -44,13 +43,20 @@ Template.onlineuser.helpers
 
 
 Template.message.helpers
+	timeposted: ->
+		current_time = new Date()
+		posted_time = new Date(this.timestamp)
+		return Math.round((current_time - posted_time) / 60000)
+
 	belongstoUser: ->
 		return (this.userId == Meteor.userId())
+
 	replies: ->
 		if this.responses
 			return this.responses.length
 		else
 			return 0
+
 	nickname: ->
 		user = Meteor.users.find(this.userId).fetch()
 		return user[0].profile.name
@@ -76,8 +82,8 @@ Template.message.rendered = ->
 
 Template.message.events
 	'click #seereplies': (e) ->
-		console.log e.currentTarget.parentElement.nextElementSibling
-		replies_element = e.currentTarget.parentElement.nextElementSibling
+		console.log e.currentTarget.parentElement.nextElementSibling.nextElementSibling
+		replies_element = e.currentTarget.parentElement.nextElementSibling.nextElementSibling
 		if replies_element.style.display is ""
 			replies_element.style.display = "table-cell"
 		else

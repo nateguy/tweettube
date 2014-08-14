@@ -38,9 +38,7 @@ getLineup = (channel) ->
 
 getChannels = ->
 		
-	channels = []
-	channels = Session.get('schedules')
-	return channels
+	return Session.get('schedules')
 
 #returns milliseconds
 getEndTimeSlot = ->
@@ -83,8 +81,8 @@ Template.channel.helpers
 Template.program.helpers
 	usersOnline: ->
 
-		i = Meteor.users.find({online: true, lastroom: this.ProgramId}).fetch()
-		console.log i
+		i = Meteor.users.find({})
+		i.length
 
 	duration: -> 
 
