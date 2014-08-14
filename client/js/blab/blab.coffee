@@ -12,6 +12,7 @@ counter_reply = ->
 	return false
 
 getTitle = ->
+	
 	programData = Session.get('programData')
 	return programData.MasterTitle
 
@@ -19,14 +20,19 @@ getDescription = ->
 	programData = Session.get('programData')
 	return programData.CopyText
 
-getID = ->
+getProgramId = ->
 	programData = Session.get('programData')
-	console.log programData
-	return programData.ProgramHandle.Id
+	return programData.ProgramId
+
+getOnlineUsers = (programId) ->
+	return Meteor.users.find({online: true, lastroom: programId}).fetch()
 
 Template.blab.helpers
 	allMessages: -> Messages.find({})
-	allUsers: -> Meteor.users.find({})
+	allUsers: -> 
+		return Meteor.users.find({})
+	onlineUsers: ->
+		return getOnlineUsers(getProgramId())
 	getTitle: -> return getTitle()
 	getDescription: -> return getDescription()
 
@@ -61,11 +67,11 @@ Template.message.rendered = ->
 		$(".counter_reply.#{this.data._id}").html("Reply")
 	else
 		$(".counter_reply.#{this.data._id}").html(t + " Replies")
-	
-	console.log Meteor.user()._id + " is online"
 
-	Meteor.call('UserUpsert', Meteor.user()._id, getEmail())
-	setInterval (-> Meteor.call('UserUpsert', Meteor.user()._id, getEmail() )), 5000
+#	console.log Meteor.user()._id + " is online"
+	
+	Meteor.call('UserUpsert', Meteor.user()._id, getProgramId() )
+	setInterval (-> Meteor.call('UserUpsert', Meteor.user()._id, getProgramId() )), 5000
 	
 
 Template.message.events
@@ -91,18 +97,6 @@ Template.message.events
 			Messages.remove this._id
 		e.preventDefault()
 		false
-
-
-
-	# 'click #reply': (e) ->
-	# 	console.log "reply"
-	# 	console.log this._id
-	# 	t = prompt "Reply message:"
-	# 	email = getEmail()
-	# 	Messages.update({_id:this._id},
-	# 		{$addToSet: {responses: {email: email, content: t}}})
-	# 	console.log this
-
 
 
 Template.blab.events
@@ -138,7 +132,8 @@ Template.message_box.events
 		input = t.find('#message-box-content')
 		message = input.value
 		userId = Meteor.userId()
-		program = getID()
+		program = getProgramId()
+		console.log program
 		input.value = ""
 
 		Messages.insert(postMessage(userId, message, program))
