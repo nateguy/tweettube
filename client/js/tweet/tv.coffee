@@ -63,7 +63,7 @@ getLineup = (channel) ->
 
 
 getChannels = ->
-		
+
 		channels = []
 		temp = Session.get('schedules')
 		for i in [0..(temp.length-1)]
@@ -85,11 +85,11 @@ Template.channel.helpers
 	thisChannel: -> getLineup(this)
 
 Template.program.helpers
-	timewidth: -> 
+	timewidth: ->
 
 		console.log this.time
 		return 0
-		
+
 
 # Template.tweet.events
 

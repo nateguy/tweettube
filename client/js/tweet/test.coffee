@@ -4,7 +4,7 @@ Template.addChannel.events
   'submit #channel-form': (e, t) ->
 
     channel = t.find('#channel-name').value
-    
+
     Channels.insert({ channel: channel})
 
     e.preventDefault()
@@ -23,9 +23,9 @@ Template.addProgram.events
     time = hour + ":" + minute
     #Programs.update({_id: channel},
     #        {$addToSet: {programs: {name: name, time: time}}})
-    
+
     Programs.insert({channel_id: channel, time: time, name: name, description: description})
-    console.log 
+    console.log
     e.preventDefault()
     false
 
@@ -41,4 +41,3 @@ Template.addProgram.hours = ->
 Template.addProgram.minutes = ->
  	minutes = [{"minute": "00"},{"minute": "30"}]
  	return minutes
- 	
