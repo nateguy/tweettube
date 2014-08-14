@@ -37,8 +37,8 @@ getLineup = (channel) ->
 
 
 getChannels = ->
-		
 	return Session.get('schedules')
+
 
 #returns milliseconds
 getEndTimeSlot = ->
@@ -76,18 +76,13 @@ Template.channel.helpers
 	allPrograms: -> Programs.find({})
 	thisChannel: -> getLineup(this)
 
-getOnlineUsers = ->
-	return Meteor.users.find({}).fetch()
-
-
 Template.program.helpers
 	usersOnline: ->
 
 		usersonline = Meteor.users.find({online: true, lastroom: this.ProgramId}).fetch()
 		usersonline.length
 
-	duration: -> 
-
+	duration: ->
 		currentTimeSlot = new Date(getCurrentTimeSlot())
 		EndTimeSlot = getEndTimeSlot()
 
@@ -103,10 +98,3 @@ Template.program.helpers
 				return Math.floor(((EndTimeSlot - airingStartTime) / 60000) / 10)
 			else
 				return Math.round(this.Duration / 10)
-
-# Template.tweet.events
-
-# 	'click .panel-body': (e, t)->
-# 		console.log t
-# 		#Router.go('blab')
-# 		false
