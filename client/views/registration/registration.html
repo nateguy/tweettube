@@ -9,8 +9,9 @@
 
 <template name="registration">
     <h1 class="reg-header">Registration</h1>
+
   <div id="registration-view">
-    <form action="#" id="registration-form" class="form-horizontal" role="form">
+<form action="#" id="registration-form" class="form-horizontal" role="form">
    <div class="form-group">
     <label for="inputEmail" class="col-sm-2 control-label">Email</label>
       <div class="col-sm-10">
@@ -41,13 +42,25 @@
       <input type="age" class="form-control" id="accounts-age" placeholder="Age">
     </div>
   </div>
+
+
+  <div class="form-group">
+    <label for="inputGender" class="col-sm-2 control-label">Gender</label>
+
+    <div class="col-sm-10">
       <select class="select-control" id="accounts-gender" name="gender">
         <option value="" selected="selected">Gender</option>
         <option value="1">Male</option>
         <option value="2">Female</option>
       </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputGender" class="col-sm-2 control-label">Favorite Genre</label>
+
+      <div class="col-sm-10">
       <select class="select-control" id="accounts-favorite" name="favorite">
-        <option value="" selected="selected">Favortite Genre</option>
+        <option value="" selected="selected">Favorite Genre</option>
         <option value="1">Action</option>
         <option value="2">Adventure</option>
         <option value="3">Comedy</option>
@@ -61,8 +74,10 @@
         <option value="11">Sci-Fi</option>
         <option value="12">Triller</option>
       </select>
+      </div>
+  </div>
       <div class="submit-button">
-      <input type="submit" class="css_btn_class" id="profile-done" value="done">
+      <input type="submit" class="css_btn_class" id="profile-done" value="Submit">
       </div>
 
     </form>

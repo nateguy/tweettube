@@ -4,10 +4,12 @@ Router.map ->
   @route 'registration'
   @route 'tweet',
     waitOn: -> [Meteor.subscribe "programs",
+
           Meteor.subscribe "channels",
           Meteor.subscribe "allusers",
           Meteor.subscribe "allprogramusers"]
-  @route 'edit'
+  @route 'edit',
+    waitOn: -> Meteor.subscribe "images"
   @route 'addChannel',
     waitOn: -> Meteor.subscribe "channels"
 
@@ -30,7 +32,8 @@ Router.map ->
       [Meteor.subscribe "programs",
           Meteor.subscribe "programMessages",this.params.ProgramId,
           Meteor.subscribe "allusers",
-          Meteor.subscribe "programusers", this.params.ProgramId]
+          Meteor.subscribe "programusers", this.params.ProgramId,
+          Meteor.subscribe "thumbs"]
 
 trimData = (x) ->
   return {ProgramId: x.ProgramHandle.Id, CopyText: x.CopyText, MasterTitle: x.MasterTitle}

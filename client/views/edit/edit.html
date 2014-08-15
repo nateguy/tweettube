@@ -1,45 +1,79 @@
 <template name="upload">
-  <div id="dropzone" class="dropzone">
-    <div style="text-align: center; color: gray;">Drop file to upload</div>
+  <div class = "edit-imag">
+    <div id="dropzone" class="dropzone">
+      <div style="text-align: center; color: gray;"><h2>Drop file to upload</h2></div>
+    </div>
   </div>
 </template>
 
 <template name="edit">
-<div class="edit-prof">
-  {{> upload}}
-  <div class = "imgdisplay">
-    <img src="{{profileImage}}" class ="imgupload">
-  </div>
-  <div id="edit-view">
-    <h1>Edit Profile</h1>
-    <form action="#" id="edit-form">
-      <input type="nickname" id="accounts-nickname" value="{{nickname}}" placeholder="Nickname">
-      <input type="age" id="accounts-age" value="{{age}}" placeholder="Age">
-      <select class="dropbox" id="accounts-gender" value="{{gender}}" name="gender">
-        <option value="" selected="selected">Gender</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-      </select>
-      <select class="dropbox" id="accounts-favorite" value="{{favorite}}" name="favorite">
-        <option value="" selected="selected">Favorite Genre</option>
-        <option value="Action">Action</option>
-        <option value="Adventure">Adventure</option>
-        <option value="Comedy">Comedy</option>
-        <option value="Crime">Crime</option>
-        <option value="Drama">Drama</option>
-        <option value="Fantasy">Fantasy</option>
-        <option value="Horror">Horror</option>
-        <option value="Mystery">Mystery</option>
-        <option value="Reality">Reality</option>
-        <option value="Romance">Romance</option>
-        <option value="Sci-Fi">Sci-Fi</option>
-        <option value="Triller">Triller</option>
-      </select>
-      <input type="submit" id="edit-done" value="done">
-    </form>
-      <div class="other-links">
+
+  <div class="edit-prof">
+    <h1 class="editH1">Edit Profile</h1>
+
+    <form action="#" id="edit-form" class="form-horizontal" role="form">
+    <div class="row">
+      <div class="small-3 columns imgdisplay">
+
+            <img src="{{profileImage}}" class ="imgupload">
+      </div>
+      <div class="small-9 columns body-prof">
+        <div class="form-group">
+                    <div>
+              <input type="nickname" class="form-control" id="accounts-nickname" value="{{nickname}}"  placeholder="Nickname">
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+            <!-- <div class="col-sm-10"> -->
+              <input type="age" class="form-control" id="accounts-age" value="{{age}}" placeholder="Age">
+            </div>
+        </div>
+
+        <!-- .select-control -->
+        <div class="form-group">
+          <select class="select-control" id="accounts-gender" value="{{gender}}" name="gender">
+            <option value="" selected="selected">Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select class="select-control" id="accounts-favorite" value="{{favorite}}" name="favorite">
+            <option value="" selected="selected">Favorite Genre</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Crime">Crime</option>
+            <option value="Drama">Drama</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Horror">Horror</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Reality">Reality</option>
+            <option value="Romance">Romance</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Triller">Triller</option>
+          </select>
+        </div>
+        </div>
+        <!-- .select-control -->
+      </div>
+<!--       <h2 class="editH2">Picture Uploader</h2> -->
+      <div class="pic">
+
+        {{> upload}}
+
+      </div>
+      <!-- Picture Uploader -->
+
+      <!-- Submit -->
+      <div class="submit-button">
+        <input type="submit" class="css_btn_class" id="edit-done" value="Submit">
+      </div>
+      <div class="other-linksedit">
         <a href="{{ pathFor 'tweet' }}">Back</a>
       </div>
+    </form>
   </div>
- </div>
+
 </template>

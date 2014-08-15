@@ -19,7 +19,8 @@ Template.upload.events
 
 Template.edit.helpers
 	profileImage: () ->
-		Images.findOne({_id: Meteor.user().profile.image}).url()
+		image = Images.findOne({_id: Meteor.user().profile.image})
+		image.url() if image
 
 	profileImageThumb: () ->
     	Images.findOne({_id: Meteor.user().profile.image}).url({store: 'thumbs'})
@@ -42,6 +43,8 @@ Template.edit.events
 			"profile.gender":gender,
 			"profile.favorite":favorite
 		})
+
+		Router.go "tweet"
 
 		e.preventDefault()
 		false
