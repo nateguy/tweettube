@@ -24,6 +24,7 @@
           </div>
       </div>
 
+      <!-- .select-control -->
       <select class="select-control" id="accounts-gender" value="{{gender}}" name="gender">
         <option value="" selected="selected">Gender</option>
         <option value="Male">Male</option>
@@ -44,6 +45,25 @@
         <option value="Sci-Fi">Sci-Fi</option>
         <option value="Triller">Triller</option>
       </select>
+      <!-- .select-control -->
+
+      <h2 class="editH2">Picture Uploader</h2>
+      <div class = "pic">
+
+        {{> upload}}
+        <div class = "imgdisplay">
+          <img src="{{profileImage}}" class ="imgupload">
+        </div>
+      </div>
+      <!-- Picture Uploader -->
+
+      <!-- Submit -->
+      <div class="submit-button">
+        <input type="submit" class="css_btn_class" id="edit-done" value="done">
+      </div>
+      <div class="other-linksedit">
+        <a href="{{ pathFor 'tweet' }}">Back</a>
+      </div>
     </form>
   </div>
 
