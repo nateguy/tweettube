@@ -5,7 +5,8 @@ Router.map ->
   @route 'tweet',
     waitOn: -> [Meteor.subscribe "programs",
           Meteor.subscribe "channels",
-          Meteor.subscribe "onlineusers"]
+          Meteor.subscribe "allusers",
+          Meteor.subscribe "allprogramusers"]
   @route 'edit'
   @route 'addChannel',
     waitOn: -> Meteor.subscribe "channels"
@@ -25,9 +26,11 @@ Router.map ->
         (error, results) ->
           programData = trimData(results.data.ProgramDetailsResult.Program)
           Session.set('programData', programData)
+      #setInterval (-> Meteor.call('UserUpsert', Meteor.user()._id, this.params.ProgramId )), 5000
       [Meteor.subscribe "programs",
           Meteor.subscribe "programMessages",this.params.ProgramId,
-          Meteor.subscribe "onlineusers"]
+          Meteor.subscribe "allusers",
+          Meteor.subscribe "programusers", this.params.ProgramId]
 
 trimData = (x) ->
   return {ProgramId: x.ProgramHandle.Id, CopyText: x.CopyText, MasterTitle: x.MasterTitle}

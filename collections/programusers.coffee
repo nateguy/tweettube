@@ -1,0 +1,1 @@
+@ProgramUsers = new Meteor.Collection 'programusers'

@@ -23,26 +23,31 @@ getProgramId = ->
 	programData = Session.get('programData')
 	return programData.ProgramId
 
-getOnlineUsers = (programId) ->
-	return Meteor.users.find({online: true, lastroom: programId}).fetch()
+getOnlineUsers = ->
+	return ProgramUsers.find().fetch()
 
 Template.blab.helpers
 	allMessages: -> Messages.find({})
-	allUsers: -> 
+	allUsers: ->
 		return Meteor.users.find({})
 	onlineUsers: ->
-		return getOnlineUsers(getProgramId())
+		return getOnlineUsers()
 	getTitle: -> return getTitle()
 	getDescription: -> return getDescription()
 
 Template.onlineuser.helpers
 	isOnline: ->
 		return this.online
-	email: ->
-		return this.emails[0].address
+	nickname: ->
 
+		user = Meteor.users.find(this.userId).fetch()
+
+		return user[0].profile.name
 
 Template.message.helpers
+	profileImageThumb: () ->
+    Images.findOne({_id: Meteor.user().profile.image}).url({store: 'thumbs'})
+
 	timeposted: ->
 		current_time = new Date()
 		posted_time = new Date(this.timestamp)
@@ -61,6 +66,8 @@ Template.message.helpers
 		user = Meteor.users.find(this.userId).fetch()
 		return user[0].profile.name
 
+Template.blab.rendered = ->
+	Meteor.call('UserUpsert', Meteor.user()._id, getProgramId() )
 
 Template.message.rendered = ->
 
@@ -74,30 +81,31 @@ Template.message.rendered = ->
 	else
 		$(".counter_reply.#{this.data._id}").html(t + " Replies")
 
-#	console.log Meteor.user()._id + " is online"
-	
-	Meteor.call('UserUpsert', Meteor.user()._id, getProgramId() )
+
+	#Meteor.call('UserUpsert', Meteor.user()._id, getProgramId() )
 	setInterval (-> Meteor.call('UserUpsert', Meteor.user()._id, getProgramId() )), 5000
-	
+
 
 Template.message.events
 	'click #seereplies': (e) ->
 		console.log e.currentTarget.parentElement.nextElementSibling.nextElementSibling
 		replies_element = e.currentTarget.parentElement.nextElementSibling.nextElementSibling
+		console.log replies_element.style.display
 		if replies_element.style.display is ""
 			replies_element.style.display = "table-cell"
 		else
 			replies_element.style.display = ""
-
-	'click #deletereply2': (e) ->
-		confirm_delete = confirm "Are you sure you want to delete this message?"
-		if confirm_delete
-			this.remove()
-		console.log this.parentElement
 		e.preventDefault()
 		false
 
 	'click #deletereply': (e) ->
+		confirm_delete = confirm "Are you sure you want to delete this message?"
+		if confirm_delete
+			Messages.update(this.messageId, {$pull: {'responses': {responseIndex: this.responseIndex}}})
+		e.preventDefault()
+		false
+
+	'click #deletemessage': (e) ->
 		confirm_delete = confirm "Are you sure you want to delete this message?"
 		if confirm_delete and (this.userId == Meteor.userId())
 			Messages.remove this._id
@@ -108,8 +116,6 @@ Template.message.events
 Template.blab.events
 
 	'click #logout': (e)->
-		console.log "logged out"
-		console.log this._id
 		Meteor.logout()
 		Router.go('login')
 		e.preventDefault()
@@ -117,20 +123,21 @@ Template.blab.events
 
 Template.reply_box.events
 	'submit .reply-box': (e, t) ->
-
-		console.log e.currentTarget
-
 		input = t.find('#reply-box-content')
 
 		message = input.value
 		user = Meteor.userId()
 
 		input.value = ""
+		time = (new Date()).getTime()
+		if !Messages.findOne(t.data._id).responses
+			responses_array_index = 0
+		else
+			responses_array_index = Messages.findOne(t.data._id).responses.length
 		Messages.update({_id:t.data._id},
-			{$addToSet: {responses: {userId: user, content: message}}})
-		
+			{$addToSet: {responses: {messageId: t.data._id, responseIndex: responses_array_index, userId: user, content: message, timestamp: time}}})
 		e.preventDefault()
-		false 
+		false
 
 Template.message_box.events
 	'submit #message-box-form': (e, t) ->
@@ -139,19 +146,9 @@ Template.message_box.events
 		message = input.value
 		userId = Meteor.userId()
 		program = getProgramId()
-		console.log program
 		input.value = ""
 
 		Messages.insert(postMessage(userId, message, program))
 
-		e.preventDefault()
-		false 
-
-	'click #clearAllMsgs': (e) ->
-		messages = Messages.find({}).fetch()
-		for m in messages
-			id = m._id
-			console.log id
-			Messages.remove id
 		e.preventDefault()
 		false

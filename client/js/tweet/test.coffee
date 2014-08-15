@@ -21,8 +21,6 @@ Template.addProgram.events
     name = t.find('#program-name').value
     description = t.find('#program-description').value
     time = hour + ":" + minute
-    #Programs.update({_id: channel},
-    #        {$addToSet: {programs: {name: name, time: time}}})
 
     Programs.insert({channel_id: channel, time: time, name: name, description: description})
     console.log

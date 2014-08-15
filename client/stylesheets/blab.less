@@ -34,6 +34,11 @@
 	}
 }
 
+#messagethumb {
+  max-height: 20px;
+  max-width: 20px;
+}
+
 #onlinelist {
 	display: block;
 	float: left;
@@ -101,14 +106,14 @@
 
 
 .message {
-	
+
 	opacity: 1;
 	padding: 2px;
 	margin: 3px 0 0 0;
 	position: relative;
 
 	width: 100%;
-	
+
 	.col-image {
 		width: 80px;
 		display: table-cell;
@@ -121,6 +126,8 @@
 		border-radius: 10px;
 		margin-left: 0;
 	}
+
+
 
   	.row {
   		margin-top: 0;
@@ -142,6 +149,7 @@
 
 	.timepost {
 		text-align: right;
+		font-size: 1rem;
 	}
 
 
@@ -164,8 +172,15 @@
 		font-size: 11pt;
 		margin-top: 2px;
 		margin-bottom: 2px;
-		padding: 2px 2px 2px 15px;
+
+
+
+		.col-content {
+		display: table-cell;
 		background-color: #99ffff;
+		border-radius: 10px;
+		margin-left: 0;
+		}
 	}
 
 	.user {
@@ -207,7 +222,7 @@
 	}
 
 
-		
+
 
 		&:after {
 			content: "";

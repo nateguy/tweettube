@@ -15,7 +15,6 @@ getLineupTimes = ->
 		else
 			timeArray.push {"time": "#{hours}:00" }
 			minutes = 30
-
 	timeArray
 
 
@@ -65,7 +64,8 @@ Template.schedule.times = ->
 
 Template.program.events
 	'click .program': (e, t) ->
-		Router.go('blab', {ProgramId: this.ProgramId, title: this.Title})
+
+		Router.go('blab', {ProgramId: this.ProgramId, UserId: Meteor.user()._id})
 		e.preventDefault()
 		false
 
@@ -79,7 +79,7 @@ Template.channel.helpers
 Template.program.helpers
 	usersOnline: ->
 
-		usersonline = Meteor.users.find({online: true, lastroom: this.ProgramId}).fetch()
+		usersonline = ProgramUsers.find({programId: this.ProgramId}).fetch()
 		usersonline.length
 
 	duration: ->

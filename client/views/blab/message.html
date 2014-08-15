@@ -1,62 +1,65 @@
 <template name="message">
-	<div class="message">
+	<div class="message" data-message-id="{{_id}}">
 		<div class="col-image user">
-				{{ nickname }}
-		</div>		
+				{{ nickname }}<br>
+				<img id="messagethumb" src="{{profileImageThumb}}">
+		</div>
 		<div class="col-content">
-		<div class="row">
+			<div class="row">
 
 
-			<div class="small-12 columns content">
-				{{ content }}
-			</div>
-
-			<div class="small-8 columns reply_link">		
-				<a href="#" id="seereplies">{{replies}} replies</a>
-				- <a href="#" id="seereplies">Reply</a>
-
-
-
-				{{#if belongstoUser}}
-				- <a href="#" id="deletereply">Delete</a>
-				{{/if}}
-			</div>
-			<div class="small-4 columns timepost">
-				{{timeposted}} minutes ago
-			</div>
-			
-			<div class="small-12 columns replies">
-				{{#each responses}}
-				
-
-				<div class="row">
-					<div class="small-12 columns reply">
-						<div class="row">
-							<div class="col-image user">{{ nickname }}</div>
-							<div class="col-content">{{ content}}
-								<div class="reply_link">
-								<a href="#" id="deletereply2">Delete</a>
-								</div>
-							</div>
-
-						</div>
-					</div>
+				<div class="small-12 columns content">
+					{{ content }}
 				</div>
 
-				{{/each}}
-				
-				
-				
+				<div class="small-8 columns reply_link">
+					<a href="#" id="seereplies">{{replies}} replies - Reply</a>
+					{{#if belongstoUser}}
+						- <a href="#" id="deletemessage">Delete</a>
+					{{/if}}
+				</div>
+				<div class="small-4 columns timepost">
+					{{timeposted}} minutes ago
+				</div>
+				<div class="small-12 columns replies">
 
-					<div class="small-12 columns replybox">
-					{{> reply_box }}
+					{{#each responses}}
+
+
+					<div class="row">
+						<div class="small-12 columns reply">
+							<div class="row">
+
+								<div class="col-image user">{{ nickname }}</div>
+								<div class="col-content">{{ content }}
+									<div class="row">
+										<div class="small-8 columns reply_link">
+											<a href="#" id="deletereply">Delete</a>
+										</div>
+										<div class="small-4 columns timepost">
+											{{timeposted}} minutes ago
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
 					</div>
-				
-			</div>
+
+					{{/each}}
+
+
+
+
+						<div class="small-12 columns replybox">
+						{{> reply_box }}
+						</div>
+
+				</div>
 			</div>
 		</div>
 	</div>
-	
+
 
 
 </template>
