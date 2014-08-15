@@ -30,6 +30,7 @@ getLineup = (channel) ->
 
 	#remove all airings that start after the end of the 2 hour window
 	for program in channel.Airings
+		console.log getAiringStartTime(program) + " " + getEndTimeSlot()
 		unless getAiringStartTime(program) >= getEndTimeSlot()
 			programs.push program
 	programs
