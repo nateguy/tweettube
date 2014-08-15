@@ -10,14 +10,7 @@ Router.map ->
           Meteor.subscribe "allprogramusers"]
   @route 'edit',
     waitOn: -> Meteor.subscribe "images"
-  @route 'addChannel',
-    waitOn: -> Meteor.subscribe "channels"
 
-  @route 'test'
-
-  @route 'addProgram',
-    waitOn: -> [Meteor.subscribe "programs",
-          Meteor.subscribe "channels"]
   @route 'blab',
     path: 'blab/:ProgramId',
     data: -> return {
