@@ -5,7 +5,8 @@ Router.map ->
   @route 'tweet',
     waitOn: -> [Meteor.subscribe "programs",
           Meteor.subscribe "channels"]
-  @route 'edit'
+  @route 'edit',
+    waitOn: -> [Meteor.subscribe "images"]
   @route 'addChannel',
     waitOn: -> Meteor.subscribe "channels"
 

@@ -2,6 +2,6 @@ Template.navbar.events
    'click #logout': (e) ->
      Meteor.logout()
 
-     Router.go('/')
+     Router.go {path: '/'}
      e.preventDefault()
      false
